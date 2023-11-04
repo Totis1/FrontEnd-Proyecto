@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: whitesmoke;
+}
+
+.headerContainer{
+    height: 110px;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container{
+    padding-block-start: 5px;
+    padding-inline: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.top{
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btnMisVentas{
+    background-color: transparent;
+    border: none;
+    margin-inline-end: 30px;
+    color: rgb(2, 2, 147);
+    font-size: 15px;
+}
