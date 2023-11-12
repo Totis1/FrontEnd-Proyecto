@@ -5,19 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/ventas.css">
+    <link rel="stylesheet" href="../css/general.css">
 </head>
 <body>
     <div class="headerContainer">
         <iframe src="../components/header.html" frameborder="0" style="width: 100%; height: 110px;"></iframe>
     </div>
-
+    
     <div class="container">
         <div class="top">
             <h1>Ventas</h1>
-            <button class="btnMisVentas">Mis ventas</button>
-            
+            <button class="btnMis-">Mis ventas</button>
+
         </div>
         <hr style="background-color:#09004e; width: 95%; height: 1px; border-radius: 3px; margin: 0 auto">
+        <div id="containerPuestos" class="containerPuestos"></div>
     </div>
 </body>
+
+<template id="card">
+    <div class="ven-card">
+        <div class="ven-img-pcontainer">
+            <img src="../img/imgIcon.png" alt="" class="ven-imgPuesto">
+        </div>
+        <div class="ven-nombrePuesto">
+            NOMBRE DEL PUESTO
+        </div>
+        <hr style="height: 3px; background-color: #09004e;">
+        <div id="listaProductos" class="ven-productosContainer">
+            
+        </div>
+        <hr style="width: 90%; margin: 0 auto">
+        <div class="row">
+            <h4> ver mas</h4>
+            <button class="ven-btnVerMas"> + </button>
+        </div>
+    </div>
+</template>
+
+<template id="nuevoProducto"">
+    <div class="ven-producto-precio">
+        <div class="producto">Producto</div>
+        <div class="precio"> Precio </div>
+    </div>
+</template>
+
+<script src="../js/ventas.js"></script>
+
 </html>

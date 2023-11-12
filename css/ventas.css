@@ -1,39 +1,91 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-
-body{
-    background-color: whitesmoke;
-}
-
-.headerContainer{
-    height: 110px;
+.containerPuestos{
     width: 100%;
-    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: top;
+    justify-content: space-around;
+    row-gap: 80px;
+    /* column-gap: 30px; */
+    margin-block-start: 50px; 
 }
 
-.container{
-    padding-block-start: 5px;
-    padding-inline: 25px;
+.ven-card{
+    margin-inline: 1%;
+
+    padding-block-start: 6px;
+    padding-block-end: 16px;
+    height: min-content;
+
+    flex-grow: 1;
+    max-width: 270px;
+    min-width: 245px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    background-color: rgb(187, 247, 255);
+    border-radius: 4px;
+    box-shadow: 2px 2px 6px rgba(0, 76, 101, 0.444);
 }
 
+.ven-img-pcontainer{
+    height: 200px;
+    width: 235px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
 
-.top{
-    width: 95%;
+.ven-imgPuesto{
+    height: 100%;
+    width: auto;
+}
+
+.ven-nombrePuesto{
+    font-size: 19px;
+    font-weight: 600;
+    margin-block-start: 10px;
+    margin-inline: 10px;
+}
+
+.ven-productosContainer{
+    
+    margin-block: 5px;
+    width: 80%;
+}
+
+.ven-producto-precio{
+    font-size: 14px;
+    width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
 }
 
-.btnMisVentas{
-    background-color: transparent;
+
+
+.row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: end;
+    margin-inline-end: 35px;
+    margin-block-start: 5px;
+    color: gray;
+    align-items: center;
+}
+
+.ven-btnVerMas{
+    margin-inline-start: 8px;
     border: none;
-    margin-inline-end: 30px;
-    color: rgb(2, 2, 147);
-    font-size: 15px;
+    width: 18px;
+    height: 18px;
+    background-color: rgba(245, 245, 245, 0.279);
+    border-radius: 100%;
+    border: 1px solid rgb(0, 64, 255);
+    color: rgb(0, 64, 255);;
+    text-align: center;
 }

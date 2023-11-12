@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/inicio.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="../css/eventos.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/ventas.css">    <link rel="preconnect" href="https://fonts.googleapis.com">
+
     </head>
 
 <body>
@@ -17,33 +20,60 @@
     <div class="container">
         <h1> Proximos eventos </h1>
         <hr style="background-color:#09004e; width: 90%; height: 1px; border-radius: 3px; margin: 0 auto">
-        <div id="containerEventos" class="container"></div>
+        <div id="eContainer" class="container"></div>
         
         <span style="height:50px"></span>
 
         <h1> Nuevas ventas </h1>
         <hr style="background-color:#09004e; width: 90%; height: 1px; border-radius: 3px; margin: 0 auto">
-        <div id="containerVentas" class="container"></div>
+        <div id="vContainer" class="containerPuestos"></div>
     </div>
 </body>
 
-<template id="card">
-    <div class="Card">
-        <div class="cImg">
-            <img src="../img/imgIcon.png" alt="" class="imgInicio">
+<template id="eCard">
+    <div class="eve-Card">
+        <div class="eve-img-container">
+            <img src="../img/imgIcon.png" alt="" class="eve-imgEvento">
         </div>
         <div >
-        <div class="info">
-            <div class="titulo"> Nombre del evento </div>
-            <div class="ponente"> Ponente: Jose Javier Peres Betancourt</div>
-            <p class="descripcion">
+        <div class="eve-info">
+            <div class="eve-titulo"> Nombre del evento </div>
+            <div class="eve-ponente"> Ponente: Jose Javier Peres Betancourt</div>
+            <p class="eve-descripcion">
                     En esta parte se mostrará una descripción del evento a realizar la cual será dada por la persona a cargo del mismo
             </p>
         </div>
-        <div class="infoEv">
+        <div class="eve-infoEv">
             dd-mm-yyyy | Lugar de evento | Horas
         </div>
     </div>
+    </div>
+</template>
+
+<template id="vCard">
+    <div class="ven-card">
+        <div class="ven-img-pcontainer">
+            <img src="../img/imgIcon.png" alt="" class="ven-imgPuesto">
+        </div>
+        <div class="ven-nombrePuesto">
+            NOMBRE DEL PUESTO
+        </div>
+        <hr style="height: 3px; background-color: #09004e;">
+        <div id="listaProductos" class="ven-productosContainer">
+            
+        </div>
+        <hr style="width: 90%; margin: 0 auto">
+        <div class="row">
+            <h4> ver mas</h4>
+            <button class="ven-btnVerMas"> + </button>
+        </div>
+    </div>
+</template>
+
+<template id="vNuevoProducto"">
+    <div class="ven-producto-precio">
+        <div class="producto">Producto</div>
+        <div class="precio"> Precio </div>
     </div>
 </template>
 
