@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/eventos.css">
     <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
     <div class="headerContainer">
@@ -14,10 +15,56 @@
     <div class="container">
         <div class="top">
             <h1>Eventos</h1>
-            <button class="btnMis-">Mis eventos</button>
+            <button id="btnAbrirLogin" class="btnMis-">Mis eventos</button>
             
         </div>
         <hr style="background-color:#09004e; width: 95%; height: 1px; border-radius: 3px; margin: 0 auto">
     </div>
+    <!-- Ventana modal Sign In -->
+    <dialog class="dialog" id="SignIn"> 
+        <form method="dialog">
+            <div class="close">
+                <button onclick="SignIn.close()" id="btnCerrarLogin">&times</button>
+            </div>
+            <h1>Inicio de sesión</h1>
+            <div class="username"> 
+                <input class="data" type="email" placeholder="Correo Electrónico"> 
+            </div>
+            <div class="password">        
+                <input class="data" type="password" placeholder="Contraseña">
+            </div>
+            <div class="enter">
+                <button class="btnEnter" id="btnIniciar" type="submit">Iniciar Sesión</button>
+            </div>
+            <div class="registro">
+                <button class="btnRegistro" id="btnNuevaCuenta" type="button">Crear nueva cuenta</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- Ventana modal Sign Up-->
+    <dialog class="dialog" id="SignUp"> 
+        <form method="dialog">
+            <button onclick="SignUp.close()" id="btnCerrarLogin">&times</button> 
+            <h1>Registro</h1>
+            <div class="username">
+                <input class="data" type="text" placeholder="Nombre">
+            </div>
+            <div>
+                <input class="data" type="text" placeholder="Apellido">
+            </div>
+            <div class="username"> 
+                <input class="data" type="email" placeholder="Correo Electrónico"> 
+            </div>
+            <div class="password">        
+                <input class="data" type="password" placeholder="Contraseña">
+            </div>
+            <div>
+                <button class="btnRegistro" id="btnReg" type="submit" >Registrarse</button>
+            </div>
+        </form>
+    </dialog>
+
+    <script src="../js/modales.js"></script>
 </body>
 </html>
