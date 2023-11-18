@@ -19,8 +19,26 @@
             <button id="btnAbrirLogin" class="btnMis-">Mis ventas</button>
         </div>
         <hr style="background-color:#09004e; width: 95%; height: 1px; border-radius: 3px; margin: 0 auto">
+    
+
+            <div class="ven-slides">
+                <div class="ven-slide" id="slide1">
+                    <img src="../img/img-ven-01.jpg" alt="Slide 1">
+                </div >
+                <div class="ven-slide" id="slide2">
+                    <img src="../img/img-ven-02.jpg" alt="Slide 2">
+                </div >
+                <div class="ven-slide" id="slide3">
+                    <img src="../img/img-ven-03.webp" alt="Slide 3">
+                </div >
+            </div>
+
         <div id="containerPuestos" class="containerPuestos"></div>
+        
     </div>
+
+
+
     <!-- Ventana modal Sign In -->
     <dialog class="dialog" id="SignIn"> 
         <form method="dialog">
@@ -70,7 +88,7 @@
 </body>
 
 <template id="card">
-    <div class="ven-card">
+    <div id="ven-card" class="ven-card" idlpc="">
         <div class="ven-img-pcontainer">
             <img src="../img/imgIcon.png" alt="" class="ven-imgPuesto">
         </div>
@@ -78,23 +96,19 @@
             NOMBRE DEL PUESTO
         </div>
         <hr style="height: 3px; background-color: #09004e;">
-        <div id="listaProductos" class="ven-productosContainer">
-            
-        </div>
+        <div id="listaProductos" class="ven-productosContainer" idlp=""></div>
         <hr style="width: 90%; margin: 0 auto">
         <div class="row">
             <h4> ver mas</h4>
-            <button class="ven-btnVerMas"> + </button>
+            <button id="btnVerMas" class="ven-btnVerMas" idbtn=""> + </button>
         </div>
     </div>
 </template>
 
-<template id="nuevoProducto"">
-    <div class="ven-producto-precio">
+<template id="nuevoProducto""><div class="ven-producto-precio">
         <div class="producto">Producto</div>
         <div class="precio"> Precio </div>
-    </div>
-</template>
+    </div></template>
 
 <script src="../js/ventas.js"></script>
 
