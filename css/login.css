@@ -1,4 +1,4 @@
-.btnMisEventos{
+.btnMisEventos {
     background-color: transparent;
     border: none;
     margin-inline-end: 30px;
@@ -7,7 +7,7 @@
     cursor: pointer;
 }
 
-.btnMisEventos:hover{
+.btnMisEventos:hover {
     font-weight: bold;
 }
 
@@ -17,98 +17,116 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 10px;
-    width: 400px;
-    height: 450px;
+    width: fit-content;
+    height: fit-content;
     font-family: sans-serif;
     border: none;
 }
 
-#btnCerrarLogin{
+#btnCerrarLogin {
     position: absolute;
-    margin: 5px 0 5px 85%;
+    margin: 10px 0 20px 76%;
+    display: flex;
+    padding: 15px;
     width: 15px;
     height: 15px;
-    border-radius: 15px;
-    font-family: sans-serif;
-    transition-duration: 0.4s;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
     border: none;
-    background-color: silver ;
+    background-color: rgb(2, 2, 147);
+    color: white;
     cursor: pointer;
+    transition: all 0.3s ease 0s;
 }
 
-#btnCerrarLogin:hover{
+#btnCerrarLogin:hover {
     font-weight: bold;
 }
 
-.dialog h1{
+.dialog h1 {
+    min-width: 350px;
+    width: 100%;
     text-align: center;
     padding: 15px 0 10px 0;
     border-bottom: 1px solid silver;
 }
 
-.dialog form{
-    padding: 10px 30px;
+.dialog form {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    padding: 10px 50px;
+    gap: 12px;
     box-sizing: border-box;
 }
 
-.username{
-    position: relative;
-    margin: 15px 0;
+.fieldsContainer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 8px;
+    gap: 8px;
 }
 
-.data {
-    border: 1px solid silver ;
-    border-radius: 10px;
-    width: 90%;
-    padding: 5px 15px 0;
-    height: 50px;
-    font-size: 16px;
+.buttonsContainer {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 16px;
+    gap: 4px;
 }
 
-.btnEnter{
-    margin: 15px 0 15px ;
-    padding: 0 20px;
+.textfieldInput {
+    display: flex;
+    align-items: center;
     width: 100%;
-    height: 50px;
+    height: fit-content;
+    padding: 12px 10px;
+    border: 1px solid silver;
     border-radius: 10px;
-    border-color: transparent;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.btnEnter {
+    padding: 12px 20px;
+    width: 100%;
+    height: fit-content;
+    border-radius: 10px;
     background-color: darkblue;
     color: #fff;
-    font-family: sans-serif;
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
+    transition: all 0.3s ease 0s;
 }
 
-.enter{
+.enter {
     top: 15px;
     border-bottom: 1px solid silver;
 }
 
-.btnEnter:hover{
-    background-color: #2874A6;
+.btnEnter:hover {
+    background-color: #2874a6;
 }
 
 .btnRegistro {
-    margin: 15px 35px 15px;
-    padding: 0 20px;
-    border-color: transparent;
-    width: 80%;
-    height: 50px;
+    padding: 12px 20px;
+    width: 100%;
+    height: fit-content;
     border-radius: 10px;
     background-color: green;
     color: #fff;
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
+    transition: all 0.2s ease 0s;
 }
 
-.btnRegistro:hover{
-    background-color: #229954 ;
+.btnRegistro:hover {
+    background-color: #229954;
     font-weight: bold;
 }
 
-.name{
+.name {
     margin-top: 15px;
 }
