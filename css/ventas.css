@@ -10,6 +10,52 @@
     margin-block-start: 50px; 
 }
 
+.ven-slides{  
+    margin-block-start: 15px;
+    width: 100%;
+    height: 330px;
+    background: #7564e1;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation: slideAnimation 18s;
+}
+
+.ven-slide {
+    display: none;
+    width: 100%;
+    overflow: hidden;
+}
+
+.ven-slide-img {
+    width: 100%;
+    height: auto;
+}
+
+@keyframes suno {
+    from{
+        opacity: 0.9;
+    }
+
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes sdos {
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 0.9;
+    }
+}
+
 .ven-card{
     margin-inline: 1%;
 
@@ -18,7 +64,7 @@
     height: min-content;
 
     flex-grow: 1;
-    max-width: 270px;
+    max-width: 25%;
     min-width: 245px;
 
     display: flex;
@@ -27,7 +73,7 @@
     
     background-color: rgb(187, 247, 255);
     border-radius: 4px;
-    box-shadow: 2px 2px 6px rgba(0, 76, 101, 0.444);
+    box-shadow: 2px 2px 6px rgba(47, 114, 136, 0.444);
 }
 
 .ven-img-pcontainer{
@@ -51,7 +97,6 @@
 }
 
 .ven-productosContainer{
-    
     margin-block: 5px;
     width: 80%;
 }
@@ -59,6 +104,7 @@
 .ven-producto-precio{
     font-size: 14px;
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -89,3 +135,12 @@
     color: rgb(0, 64, 255);;
     text-align: center;
 }
+
+.invitacion{
+    margin-block-start: 15px;
+    width: 100%;
+    height: 330px;
+    background-color: blue;
+}
+
+
