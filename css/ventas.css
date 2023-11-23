@@ -1,12 +1,12 @@
 .containerPuestos {
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: top;
     justify-content: space-around;
-    row-gap: 30px;
-    column-gap: 30px;
     margin-block-start: 50px;
 }
 
@@ -67,11 +67,11 @@
     flex-direction: column;
     align-items: center;
     height: min-content;
-    max-width: 25%;
-    min-width: 245px;
+    width: 100%;
+    min-width: fit-content;
     padding: 16px 0px;
 
-    background-color: rgb(238, 253, 255);
+    background-color: rgb(255, 255, 255);
     border: 1px solid gray;
     border-radius: 8px;
 
@@ -93,15 +93,14 @@
 .ven-nombrePuesto {
     font-size: 19px;
     font-weight: 600;
-    margin-block-start: 10px;
-    margin-inline: 10px;
+    margin: 8px;
 }
 
 .ven-productosContainer {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    padding: 4px 0px;
+    padding: 8px 0px;
     width: 80%;
 }
 
@@ -129,7 +128,7 @@
     justify-content: end;
     width: fit-content;
     padding: 4px 8px;
-    margin-top: 4px;
+    margin-top: 8px;
     color: gray;
     align-items: center;
     background-color: rgba(168, 177, 229, 0.279);

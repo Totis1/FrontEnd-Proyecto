@@ -48,15 +48,14 @@
     min-width: 350px;
     width: 100%;
     text-align: center;
-    padding: 15px 0 10px 0;
-    border-bottom: 1px solid silver;
+    padding-bottom: 10px;
 }
 
 .dialog form {
     display: flex;
     flex-direction: column;
     width: fit-content;
-    padding: 10px 50px;
+    padding: 25px 50px;
     gap: 12px;
     box-sizing: border-box;
 }
@@ -64,7 +63,6 @@
 .fieldsContainer {
     display: flex;
     flex-direction: column;
-    padding-top: 8px;
     gap: 8px;
 }
 

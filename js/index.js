@@ -8,7 +8,7 @@ const vcontainer = document.getElementById("vContainer");
 const vnewProduct = document.getElementById("vNuevoProducto").content;
 
 window.addEventListener("DOMContentLoaded", () => {
-    const nE = 3;
+    const nE = 6;
     econtainer.innerHTML = "";
     for (let index = 0; index < nE; index++) {
         const clone = ecard.cloneNode(true);
@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         vcard.getElementById("listaProductos").innerHTML = "";
 
-        for (let u = 0; u < 3; u++) {
+        for (let u = 0; u < 6; u++) {
             const cloneP = vnewProduct.cloneNode(true);
             fragment.appendChild(cloneP);
             listProducts.appendChild(fragment);

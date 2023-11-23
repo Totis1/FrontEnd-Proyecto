@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-    padding: 50px 50px;
+    padding: 50px 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,7 +35,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4px;
+    gap: 8px;
     padding: 10px 20px;
     border-radius: 8px;
     background-color: rgba(168, 177, 229, 0.279);
@@ -47,6 +47,7 @@ body {
     & svg {
         padding-bottom: 3px;
     }
+
     &:hover {
         background-color: rgba(153, 161, 209, 0.479);
         cursor: pointer;
