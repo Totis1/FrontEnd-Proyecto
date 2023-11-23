@@ -1,21 +1,22 @@
-.containerPuestos{
+.containerPuestos {
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: top;
     justify-content: space-around;
-    row-gap: 80px;
-    /* column-gap: 30px; */
-    margin-block-start: 50px; 
+    row-gap: 30px;
+    column-gap: 30px;
+    margin-block-start: 50px;
 }
 
-.ven-slides{  
-    margin-block-start: 15px;
+.ven-slides {
     width: 100%;
     height: 330px;
     background: #7564e1;
 
+    border-radius: 8px;
+    border: 1px solid black;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -31,77 +32,80 @@
     overflow: hidden;
 }
 
+.ven-slide img {
+    max-width: 4000px;
+    width: 100%;
+}
+
 .ven-slide-img {
     width: 100%;
     height: auto;
 }
 
 @keyframes suno {
-    from{
+    from {
         opacity: 0.9;
     }
 
-    to{
+    to {
         opacity: 0;
     }
 }
 
 @keyframes sdos {
-    from{
+    from {
         opacity: 0;
     }
 
-    to{
+    to {
         opacity: 0.9;
     }
 }
 
-.ven-card{
-    margin-inline: 1%;
-
-    padding-block-start: 6px;
-    padding-block-end: 16px;
-    height: min-content;
-
-    flex-grow: 1;
-    max-width: 25%;
-    min-width: 245px;
-
+.ven-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    background-color: rgb(187, 247, 255);
-    border-radius: 4px;
-    box-shadow: 2px 2px 6px rgba(47, 114, 136, 0.444);
+    height: min-content;
+    max-width: 25%;
+    min-width: 245px;
+    padding: 16px 0px;
+
+    background-color: rgb(238, 253, 255);
+    border: 1px solid gray;
+    border-radius: 8px;
+
+    flex-grow: 1;
 }
 
-.ven-img-pcontainer{
-    height: 200px;
-    width: 235px;
-    background-color: white;
+.ven-img-pcontainer {
     display: flex;
     justify-content: center;
+    height: 200px;
+    width: 235px;
 }
 
-.ven-imgPuesto{
+.ven-imgPuesto {
     height: 100%;
     width: auto;
 }
 
-.ven-nombrePuesto{
+.ven-nombrePuesto {
     font-size: 19px;
     font-weight: 600;
     margin-block-start: 10px;
     margin-inline: 10px;
 }
 
-.ven-productosContainer{
-    margin-block: 5px;
+.ven-productosContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 4px 0px;
     width: 80%;
 }
 
-.ven-producto-precio{
+.ven-producto-precio {
     font-size: 14px;
     width: 100%;
     height: auto;
@@ -110,37 +114,40 @@
     justify-content: space-between;
 }
 
-
-
-.row{
-    width: 100%;
+.row {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: end;
-    margin-inline-end: 35px;
-    margin-block-start: 5px;
+    width: 80%;
     color: gray;
     align-items: center;
 }
 
-.ven-btnVerMas{
-    margin-inline-start: 8px;
-    border: none;
-    width: 18px;
-    height: 18px;
-    background-color: rgba(245, 245, 245, 0.279);
-    border-radius: 100%;
-    border: 1px solid rgb(0, 64, 255);
-    color: rgb(0, 64, 255);;
+.ven-btnVerMas {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: fit-content;
+    padding: 4px 8px;
+    margin-top: 4px;
+    color: gray;
+    align-items: center;
+    background-color: rgba(168, 177, 229, 0.279);
+    border-radius: 8px;
+    border: 1px solid black;
+    color: black;
     text-align: center;
+    transition: 0.1s ease-in-out all;
 }
 
-.invitacion{
+.ven-btnVerMas:hover {
+    background-color: rgba(153, 161, 209, 0.479);
+    cursor: pointer;
+}
+
+.invitacion {
     margin-block-start: 15px;
     width: 100%;
     height: 330px;
     background-color: blue;
 }
-
-
