@@ -16,25 +16,39 @@ body {
 }
 
 .container {
-    padding-block-start: 5px;
-    padding-inline: 25px;
+    padding: 50px 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .top {
-    width: 95%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding: 20px 0px;
+    width: 100%;
 }
 
 .btnMis- {
-    background-color: transparent;
-    border: none;
-    margin-inline-end: 30px;
-    color: rgb(2, 2, 147);
-    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: rgba(168, 177, 229, 0.279);
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.1s ease-in-out all;
+
+    & svg {
+        padding-bottom: 3px;
+    }
+    &:hover {
+        background-color: rgba(153, 161, 209, 0.479);
+        cursor: pointer;
+    }
 }

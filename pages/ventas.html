@@ -16,9 +16,22 @@
         <div class="container">
             <div class="top">
                 <h1>Ventas</h1>
-                <button id="btnAbrirLogin" class="btnMis-">Mis ventas</button>
+                <button id="btnAbrirLogin" class="btnMis-">
+                    <p>Mis ventas</p>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-basket3-fill"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.468 15.426.943 9h14.114l-1.525 6.426a.75.75 0 0 1-.729.574H3.197a.75.75 0 0 1-.73-.574z"
+                        />
+                    </svg>
+                </button>
             </div>
-            <hr style="background-color: #09004e; width: 95%; height: 1px; border-radius: 3px; margin: 0 auto" />
 
             <div class="ven-slides">
                 <div class="ven-slide" id="slide1">
@@ -74,25 +87,22 @@
     </body>
 
     <template id="card">
-        <div id="ven-card" class="ven-card" idlpc="">
+        <div id="ven-card" class="ven-card">
             <div class="ven-img-pcontainer">
                 <img src="../img/imgIcon.png" alt="" class="ven-imgPuesto" />
             </div>
             <div class="ven-nombrePuesto">NOMBRE DEL PUESTO</div>
-            <hr style="height: 3px; background-color: #09004e" />
+            <hr style="background-color: black; width: 90%; height: 1px; border-radius: 3px; border: none" />
             <div id="listaProductos" class="ven-productosContainer" idlp=""></div>
-            <hr style="width: 90%; margin: 0 auto" />
-            <div class="row">
-                <h4>ver mas</h4>
-                <button id="btnVerMas" class="ven-btnVerMas" idbtn="">+</button>
-            </div>
+            <hr style="background-color: black; width: 90%; height: 1px; border-radius: 3px; border: none" />
+            <button id="btnVerMas" class="ven-btnVerMas" idbtn="">Ver más</button>
         </div>
     </template>
 
     <template id="nuevoProducto">
         <div class="ven-producto-precio">
             <div class="producto">Producto</div>
-            <div class="precio">Precio</div>
+            <div class="precio">10.00$</div>
         </div>
     </template>
 
