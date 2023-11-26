@@ -83,8 +83,6 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 const showSlides = () => {
-    console.log("@@@" + nSlides)
-        console.log("-->" + slides)
     slides[ nSlides ].style.animation = 'suno 1s'
     
     setTimeout( () => {

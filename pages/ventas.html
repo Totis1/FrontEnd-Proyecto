@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,50 +9,55 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/login.css">
 </head>
+
 <body>
     <div class="headerContainer">
         <iframe src="../components/header.html" frameborder="0" style="width: 100%; height: 110px;"></iframe>
     </div>
-    
+
     <div class="container">
         <div class="top">
             <h1>Ventas</h1>
             <button id="btnAbrirLogin" class="btnMis-">Mis ventas</button>
         </div>
         <hr style="background-color:#09004e; width: 95%; height: 1px; border-radius: 3px; margin: 0 auto">
-    
 
-            <div class="ven-slides">
-                <div class="ven-slide" id="slide1">
-                    <img src="../img/img-ven-01.jpg" alt="Slide 1">
-                </div >
-                <div class="ven-slide" id="slide2">
-                    <img src="../img/img-ven-02.jpg" alt="Slide 2">
-                </div >
-                <div class="ven-slide" id="slide3">
-                    <img src="../img/img-ven-03.webp" alt="Slide 3">
-                </div >
+
+        <div class="ven-slides">
+            <div class="ven-slide" id="slide1">
+                <img src="../img/img-ven-01.jpg" alt="Slide 1">
             </div>
+            <div class="ven-slide" id="slide2">
+                <img src="../img/img-ven-02.jpg" alt="Slide 2">
+            </div>
+            <div class="ven-slide" id="slide3">
+                <img src="../img/img-ven-03.webp" alt="Slide 3">
+            </div>
+        </div>
 
         <div id="containerPuestos" class="containerPuestos"></div>
-        
+
     </div>
 
 
 
     <!-- Ventana modal Sign In -->
-    <dialog class="dialog" id="SignIn"> 
+    <dialog class="dialog" id="SignIn">
         <form method="dialog">
             <div class="close">
-                <button onclick="SignIn.close()" id="btnCerrarLogin">&times</button>
+                <button onclick="closeDialogLogin()" id="btnCerrarLogin">&times</button>
             </div>
             <h1>Inicio de sesión</h1>
-            <div class="username"> 
-                <input class="data" type="email" placeholder="Correo Electrónico"> 
+            <div class="username">
+                <input id="logUsuario" class="data" type="email" placeholder="Correo Electrónico">
             </div>
-            <div class="password">        
-                <input class="data" type="password" placeholder="Contraseña">
+            <div class="error-login" id="error-login-correo"></div>
+
+            <div class="password">
+                <input id="logContrasena" class="data" type="password" placeholder="Contraseña">
             </div>
+            <div class="error-login" id="error-login-contrasena"></div>
+
             <div class="enter">
                 <button class="btnEnter" id="btnIniciar" type="submit">Iniciar Sesión</button>
             </div>
@@ -62,28 +68,29 @@
     </dialog>
 
     <!-- Ventana modal Sign Up-->
-    <dialog class="dialog" id="SignUp"> 
+    <dialog class="dialog" id="SignUp">
         <form method="dialog">
-            <button onclick="SignUp.close()" id="btnCerrarLogin">&times</button> 
+            <button onclick="SignUp.close()" id="btnCerrarLogin">&times</button>
             <h1>Registro</h1>
             <div class="username">
-                <input class="data" type="text" placeholder="Nombre">
+                <input id="inpNombre" class="data" type="text" placeholder="Nombre">
             </div>
             <div>
-                <input class="data" type="text" placeholder="Apellido">
+                <input id="inpApellido" class="data" type="text" placeholder="Apellido">
             </div>
-            <div class="username"> 
-                <input class="data" type="email" placeholder="Correo Electrónico"> 
+            <div class="username">
+                <input id="inpCorreo" class="data" type="email" placeholder="Correo Electrónico">
             </div>
-            <div class="password">        
-                <input class="data" type="password" placeholder="Contraseña">
+            <div class="password">
+                <input id="inpContrasena" class="data" type="password" placeholder="Contraseña">
             </div>
             <div>
-                <button class="btnRegistro" id="btnReg" type="submit" >Registrarse</button>
+                <button class="btnRegistro" id="btnReg" type="submit">Registrarse</button>
             </div>
+            <div class="error-registro" id="error-registro"></div>
         </form>
     </dialog>
-    
+
     <script src="../js/modales.js"></script>
 </body>
 
@@ -105,10 +112,11 @@
     </div>
 </template>
 
-<template id="nuevoProducto""><div class="ven-producto-precio">
-        <div class="producto">Producto</div>
-        <div class="precio"> Precio </div>
-    </div></template>
+<template id="nuevoProducto""><div class=" ven-producto-precio">
+    <div class="producto">Producto</div>
+    <div class="precio"> Precio </div>
+    </div>
+</template>
 
 <script src="../js/ventas.js"></script>
 
