@@ -43,11 +43,15 @@ header{
 }
 
 .menuButton{
+    cursor: pointer;
     background-color: transparent;
     color: white;
     margin-inline: 9px;
     border: none;
     font-size: 14px;
+    &:hover{
+        font-weight: bold;
+    }
 }
 
 .menuAdm{
