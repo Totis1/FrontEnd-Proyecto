@@ -15,34 +15,74 @@
 
         <div class="container">
             <div class="top">
-                <h1>Ventas</h1>
+                <h1>Mis ventas</h1>
                 <button id="btnAbrirLogin" class="btnMis-">
-                    <p>Mis ventas</p>
+                    <p>Mi perfil</p>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
                         height="16"
                         fill="currentColor"
-                        class="bi bi-basket3-fill"
+                        class="bi bi-person-fill"
                         viewBox="0 0 16 16"
                     >
-                        <path
-                            d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.468 15.426.943 9h14.114l-1.525 6.426a.75.75 0 0 1-.729.574H3.197a.75.75 0 0 1-.73-.574z"
-                        />
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                     </svg>
                 </button>
             </div>
 
-            <div class="ven-slides">
-                <div class="ven-slide" id="slide1">
-                    <img src="../img/img-ven-01.jpg" alt="Slide 1" />
-                </div>
-                <div class="ven-slide" id="slide2">
-                    <img src="../img/img-ven-02.jpg" alt="Slide 2" />
-                </div>
-                <div class="ven-slide" id="slide3">
-                    <img src="../img/img-ven-03.webp" alt="Slide 3" />
-                </div>
+            <div class="buttonContainer">
+                <button id="btnAbrirLogin" class="btnVentasAgregar">
+                    <p>Agregar</p>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="200"
+                        height="200"
+                        fill="currentColor"
+                        class="bi bi-plus-lg"
+                        viewBox="0 0 16 16"
+                        id="IconChangeColor"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
+                            id="mainIconPathAttribute"
+                            stroke-width="1.5"
+                            stroke="#ffffff"
+                            fill="#ffffff"
+                        ></path>
+                    </svg>
+                </button>
+                <button id="btnAbrirLogin" class="btnVentasEditar">
+                    <p>Editar</p>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-pencil-fill"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"
+                        />
+                    </svg>
+                </button>
+                <button id="btnAbrirLogin" class="btnVentasEliminar">
+                    <p>Eliminar</p>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-trash-fill"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"
+                        />
+                    </svg>
+                </button>
             </div>
 
             <div id="containerPuestos" class="containerPuestos"></div>
@@ -108,16 +148,3 @@
 
     <script src="../js/ventas.js"></script>
 </html>
-
-<script>
-    const btnIniciar = document.getElementById("btnIniciar");
-    const btnReg = document.getElementById("btnReg");
-
-    btnIniciar.addEventListener("click", () => {
-        window.parent.location.href = "../pages/misventas.html";
-    });
-
-    btnReg.addEventListener("click", () => {
-        window.parent.location.href = "../pages/misventas.html";
-    });
-</script>
