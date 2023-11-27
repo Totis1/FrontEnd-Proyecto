@@ -6,16 +6,17 @@ const newProduct = document.getElementById("nuevoProducto").content;
 const slides = document.querySelectorAll(".ven-slide");
 let nSlides = 0;
 
-let idenLP = 0;
-let vmAbi = -1;
+let productListId = 0;
+let openListId = -1;
 
+//change verMas to toggleProductList.
 const verMas = (e) => {
     const id = e.target.getAttribute("idbtn");
 
     //Ya hay algo abierto
-    if (vmAbi != -1) {
-        const lp = document.querySelector('[idlp="' + vmAbi + '"]');
-        const lpc = document.querySelector('[idlpc="' + vmAbi + '"]');
+    if (openListId != -1) {
+        const lp = document.querySelector('[idlp="' + openListId + '"]');
+        const lpc = document.querySelector('[idlpc="' + openListId + '"]');
         let num_productos;
 
         //lpc.style.height = lpc.offsetHeight + 'px';
@@ -28,40 +29,40 @@ const verMas = (e) => {
     }
 
     //La lista desplegada es distinta o no había lista desplegada
-    if (vmAbi != id) {
+    if (openListId != id) {
         const lp = document.querySelector('[idlp="' + id + '"]');
         for (u = 0; u < 3; u += 1) {
             const clone = newProduct.cloneNode(true);
             fragment.appendChild(clone);
             lp.appendChild(fragment);
         }
-        vmAbi = id;
+        openListId = id;
     } else {
-        vmAbi = -1;
+        openListId = -1;
     }
 };
 
 window.addEventListener("DOMContentLoaded", () => {
-    showSlides();
+    displaySlides();
 
-    const nE = 12;
-    let b = 3;
+    const numEvents = 12;
+    let numProducts = 3;
     containerEve.innerHTML = "";
-    for (let index = 0; index < nE; index++) {
+    for (let index = 0; index < numEvents; index++) {
         const listProducts = card.getElementById("listaProductos");
 
         card.getElementById("listaProductos").innerHTML = "";
 
-        for (let u = 0; u < b; u++) {
+        for (let u = 0; u < numProducts; u++) {
             const cloneP = newProduct.cloneNode(true);
             fragment.appendChild(cloneP);
             listProducts.appendChild(fragment);
         }
 
-        card.getElementById("listaProductos").setAttribute("idlp", idenLP);
-        card.getElementById("btnVerMas").setAttribute("idbtn", idenLP);
-        card.getElementById("ven-card").setAttribute("idlpc", idenLP);
-        idenLP += 1;
+        card.getElementById("listaProductos").setAttribute("idlp", productListId);
+        card.getElementById("btnVerMas").setAttribute("idbtn", productListId);
+        card.getElementById("ven-card").setAttribute("idlpc", productListId);
+        productListId += 1;
 
         const clone = card.cloneNode(true);
         fragment.appendChild(clone);
@@ -75,9 +76,13 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-const showSlides = () => {
-    console.log("@@@" + nSlides);
-    console.log("-->" + slides);
+const displaySlides = () => {
+    if (slides.length === 0) {
+        return;
+    }
+
+    // console.log("Slide # currently showing: " + nSlides); // hide console logs. also describe what it does.
+    // console.log("-->" + slides); // ?
     slides[nSlides].style.animation = "suno 1s";
 
     setTimeout(() => {
@@ -93,4 +98,8 @@ const showSlides = () => {
     }, 950);
 };
 
-setInterval(showSlides, 900 * 6);
+setInterval(() => {
+    if (slides.length > 0) {
+        displaySlides();
+    }
+}, 900 * 6);

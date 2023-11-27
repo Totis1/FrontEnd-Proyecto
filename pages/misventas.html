@@ -31,8 +31,8 @@
                 </button>
             </div>
 
-            <div class="buttonContainer">
-                <button id="btnAbrirLogin" class="btnVentasAgregar">
+            <div class="buttonActionsContainer">
+                <button id="btnVentasAgregar" class="btnVentasAgregar">
                     <p>Agregar</p>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@
                         ></path>
                     </svg>
                 </button>
-                <button id="btnAbrirLogin" class="btnVentasEditar">
+                <button id="btnVentasEditar" class="btnVentasEditar">
                     <p>Editar</p>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +68,7 @@
                         />
                     </svg>
                 </button>
-                <button id="btnAbrirLogin" class="btnVentasEliminar">
+                <button id="btnVentasEliminar" class="btnVentasEliminar">
                     <p>Eliminar</p>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -84,15 +84,32 @@
                     </svg>
                 </button>
             </div>
-
             <div id="containerPuestos" class="containerPuestos"></div>
         </div>
 
-        <!-- Ventana modal Sign In -->
-        <dialog class="dialog" id="SignIn">
+        <!-- Ventana modal Agregar -->
+        <dialog class="dialog" id="ModalAgregar">
             <form method="dialog">
                 <div class="close">
-                    <button onclick="SignIn.close()" id="btnCerrarLogin">&times</button>
+                    <button onclick="Agregar.close()" id="btnCerrarLogin">&times</button>
+                </div>
+                <h1>Agregar</h1>
+                <div class="fieldsContainer">
+                    <input class="textfieldInput" type="text" placeholder="Nombre del puesto" />
+                    <input class="textfieldInput" type="text" placeholder="Nombre del producto" />
+                    <input class="textfieldInput" type="text" placeholder="Precio" />
+                </div>
+                <div class="buttonsContainer">
+                    <button class="btnRegistro" id="btnReg" type="submit">Agregar</button>
+                </div>
+            </form>
+        </dialog>
+
+        <!-- Ventana modal Sign In -->
+        <dialog class="dialog" id="ModalSignIn">
+            <form method="dialog">
+                <div class="close">
+                    <button onclick="ModalSignIn.close()" id="btnCerrarLogin">&times</button>
                 </div>
                 <h1>Inicio de sesión</h1>
                 <div class="fieldsContainer">
@@ -107,9 +124,9 @@
         </dialog>
 
         <!-- Ventana modal Sign Up-->
-        <dialog class="dialog" id="SignUp">
+        <dialog class="dialog" id="ModalSignUp">
             <form method="dialog">
-                <button onclick="SignUp.close()" id="btnCerrarLogin">&times</button>
+                <button onclick="ModalSignUp.close()" id="btnCerrarLogin">&times</button>
                 <h1>Registro</h1>
                 <div class="fieldsContainer">
                     <input class="textfieldInput" type="text" placeholder="Nombre" />
