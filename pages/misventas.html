@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/ventas.css" />
+        <link rel="stylesheet" href="../css/general.css" />
+        <link rel="stylesheet" href="../css/login.css" />
+    </head>
+    <body>
+        <div class="headerContainer">
+            <iframe src="../components/header.html" frameborder="0" style="width: 100%; height: 110px"></iframe>
+        </div>
+
+        <div class="container">
+            <div class="top">
+                <h1>Mis ventas</h1>
+                <button id="btnAbrirLogin" class="btnMis-">
+                    <p>Mi perfil</p>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-person-fill"
+                        viewBox="0 0 16 16"
+                    >
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="buttonActionsContainer">
+                <button id="btnVentasAgregar" class="btnVentasAgregar">
+                    <p>Agregar</p>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="200"
+                        height="200"
+                        fill="currentColor"
+                        class="bi bi-plus-lg"
+                        viewBox="0 0 16 16"
+                        id="IconChangeColor"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
+                            id="mainIconPathAttribute"
+                            stroke-width="1.5"
+                            stroke="#ffffff"
+                            fill="#ffffff"
+                        ></path>
+                    </svg>
+                </button>
+                <button id="btnVentasEditar" class="btnVentasEditar">
+                    <p>Editar</p>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-pencil-fill"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"
+                        />
+                    </svg>
+                </button>
+                <button id="btnVentasEliminar" class="btnVentasEliminar">
+                    <p>Eliminar</p>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-trash-fill"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"
+                        />
+                    </svg>
+                </button>
+            </div>
+            <div id="containerPuestos" class="containerPuestos"></div>
+        </div>
+
+        <!-- Ventana modal Agregar -->
+        <dialog class="dialog" id="ModalAgregar">
+            <form method="dialog">
+                <div class="close">
+                    <button onclick="Agregar.close()" id="btnCerrarLogin">&times</button>
+                </div>
+                <h1>Agregar</h1>
+                <div class="fieldsContainer">
+                    <input class="textfieldInput" type="text" placeholder="Nombre del puesto" />
+                    <input class="textfieldInput" type="text" placeholder="Nombre del producto" />
+                    <input class="textfieldInput" type="text" placeholder="Precio" />
+                </div>
+                <div class="buttonsContainer">
+                    <button class="btnRegistro" id="btnReg" type="submit">Agregar</button>
+                </div>
+            </form>
+        </dialog>
+
+        <!-- Ventana modal Sign In -->
+        <dialog class="dialog" id="ModalSignIn">
+            <form method="dialog">
+                <div class="close">
+                    <button onclick="ModalSignIn.close()" id="btnCerrarLogin">&times</button>
+                </div>
+                <h1>Inicio de sesión</h1>
+                <div class="fieldsContainer">
+                    <input class="textfieldInput" type="email" placeholder="Correo Electrónico" />
+                    <input class="textfieldInput" type="password" placeholder="Contraseña" />
+                </div>
+                <div class="buttonsContainer">
+                    <button class="btnEnter" id="btnIniciar" type="submit">Iniciar Sesión</button>
+                    <button class="btnRegistro" id="btnNuevaCuenta" type="button">Crear nueva cuenta</button>
+                </div>
+            </form>
+        </dialog>
+
+        <!-- Ventana modal Sign Up-->
+        <dialog class="dialog" id="ModalSignUp">
+            <form method="dialog">
+                <button onclick="ModalSignUp.close()" id="btnCerrarLogin">&times</button>
+                <h1>Registro</h1>
+                <div class="fieldsContainer">
+                    <input class="textfieldInput" type="text" placeholder="Nombre" />
+                    <input class="textfieldInput" type="text" placeholder="Apellido" />
+                    <input class="textfieldInput" type="email" placeholder="Correo Electrónico" />
+                    <input class="textfieldInput" type="password" placeholder="Contraseña" />
+                </div>
+                <div class="buttonsContainer">
+                    <button class="btnRegistro" id="btnReg" type="submit">Registrarse</button>
+                </div>
+            </form>
+        </dialog>
+
+        <script src="../js/modales.js"></script>
+    </body>
+
+    <template id="card">
+        <div id="ven-card" class="ven-card">
+            <div class="ven-img-pcontainer">
+                <img src="../img/imgIcon.png" class="ven-imgPuesto" />
+            </div>
+            <div class="ven-nombrePuesto">Nombre del puesto</div>
+            <hr style="background-color: black; width: 90%; height: 1px; border-radius: 3px; border: none" />
+            <div id="listaProductos" class="ven-productosContainer"></div>
+            <hr style="background-color: black; width: 90%; height: 1px; border-radius: 3px; border: none" />
+            <button id="btnVerMas" class="ven-btnVerMas">Ver más</button>
+        </div>
+    </template>
+
+    <template id="nuevoProducto">
+        <div class="ven-producto-precio">
+            <div class="producto">Producto</div>
+            <div class="precio">10.00$</div>
+        </div>
+    </template>
+
+    <script src="../js/ventas.js"></script>
+</html>

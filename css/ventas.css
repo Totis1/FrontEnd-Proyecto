@@ -1,5 +1,6 @@
 .containerPuestos {
     width: 100%;
+    min-height: 600px;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 30px;
@@ -8,6 +9,89 @@
     align-items: top;
     justify-content: space-around;
     margin-block-start: 50px;
+}
+
+.buttonActionsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.btnVentasAgregar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: rgba(30, 162, 28, 0.5);
+    border: 2px solid rgb(30, 162, 28);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.1s ease-in-out all;
+
+    & svg {
+        max-width: 16px;
+        max-height: 16px;
+        padding-bottom: 3px;
+    }
+
+    &:hover {
+        background-color: rgb(30, 162, 28, 0.7);
+        cursor: pointer;
+    }
+}
+
+.btnVentasEliminar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: rgb(255, 0, 0, 0.5);
+    border: 2px solid rgb(255, 0, 0);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.1s ease-in-out all;
+
+    & svg {
+        padding-bottom: 3px;
+    }
+
+    &:hover {
+        background-color: rgb(255, 0, 0, 0.7);
+        cursor: pointer;
+    }
+}
+
+.btnVentasEditar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: rgb(113, 113, 113, 0.5);
+    border: 2px solid rgba(113, 113, 113);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.1s ease-in-out all;
+
+    & svg {
+        padding-bottom: 3px;
+    }
+
+    &:hover {
+        background-color: rgb(113, 113, 113, 0.7);
+        cursor: pointer;
+    }
 }
 
 .ven-slides {
