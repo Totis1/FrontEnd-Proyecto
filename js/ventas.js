@@ -82,6 +82,7 @@ window.addEventListener('DOMContentLoaded', () => {
   
 })
 
+
 const showSlides = () => {
     slides[ nSlides ].style.animation = 'suno 1s'
     
