@@ -38,12 +38,14 @@
         <dialog class="dialog" id="ModalSignIn">
             <form method="dialog">
                 <div class="close">
-                    <button onclick="ModalSignIn.close()" id="btnCerrarLogin">&times</button>
+                    <button onclick="closeDialogLogin()" id="btnCerrarLogin">&times</button>
                 </div>
                 <h1>Inicio de sesión</h1>
                 <div class="fieldsContainer">
-                    <input class="textfieldInput" type="email" placeholder="Correo Electrónico" />
-                    <input class="textfieldInput" type="password" placeholder="Contraseña" />
+                    <input id="logUsuario" class="textfieldInput" type="email" placeholder="Correo Electrónico" />
+                    <div class="error-login" id="error-login-correo"></div>
+                    <input id="logContrasena" class="textfieldInput" type="password" placeholder="Contraseña" />
+                    <div class="error-login" id="error-login-contrasena"></div>
                 </div>
                 <div class="buttonsContainer">
                     <button class="btnEnter" id="btnIniciar" type="submit">Iniciar Sesión</button>
@@ -58,14 +60,15 @@
                 <button onclick="ModalSignUp.close()" id="btnCerrarLogin">&times</button>
                 <h1>Registro</h1>
                 <div class="fieldsContainer">
-                    <input class="textfieldInput" type="text" placeholder="Nombre" />
-                    <input class="textfieldInput" type="text" placeholder="Apellido" />
-                    <input class="textfieldInput" type="email" placeholder="Correo Electrónico" />
-                    <input class="textfieldInput" type="password" placeholder="Contraseña" />
+                    <input id="inpNombre" class="textfieldInput" type="text" placeholder="Nombre" />
+                    <input id="inpApellido" class="textfieldInput" type="text" placeholder="Apellido" />
+                    <input id="inpCorreo" class="textfieldInput" type="email" placeholder="Correo Electrónico" />
+                    <input id="inpContrasena" class="textfieldInput" type="password" placeholder="Contraseña" />
                 </div>
                 <div class="buttonsContainer">
                     <button class="btnRegistro" id="btnReg" type="submit">Registrarse</button>
                 </div>
+                <div class="error-registro" id="error-registro"></div>
             </form>
         </dialog>
 
@@ -77,16 +80,16 @@
             <div class="eve-img-container">
                 <img src="../img/imgIcon.png" alt="" class="eve-imgEvento" />
             </div>
-            <div class="">
+            <div>
                 <div class="eve-info">
-                    <div class="eve-titulo">Nombre del evento</div>
-                    <div class="eve-ponente">Ponente: Jose Javier Peres Betancourt</div>
-                    <p class="eve-descripcion">
+                    <div class="eve-titulo" id="eve-titulo">Nombre del evento</div>
+                    <div class="eve-ponente" id="eve-ponente">Ponente: Jose Javier Peres Betancourt</div>
+                    <p class="eve-descripcion" id="eve-descripcion">
                         En esta parte se mostrará una descripción del evento a realizar la cual será dada por la persona
                         a cargo del mismo
                     </p>
                 </div>
-                <div class="eve-infoEv">dd-mm-yyyy | Lugar de evento | Horas</div>
+                <div class="eve-infoEv" id="eve-infoEv">dd-mm-yyyy | Lugar de evento | Horas</div>
             </div>
         </div>
     </template>

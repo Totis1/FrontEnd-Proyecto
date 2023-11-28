@@ -56,8 +56,8 @@
 .eve-descripcion {
     align-items: center;
     justify-content: center;
-    padding-block-start: 8px;
-    padding-block-end: 8px;
+    margin-block-start: 8px;
+    margin-block-end: 17px;
     padding-inline: 12px;
 
     text-align: start;

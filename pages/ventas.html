@@ -52,12 +52,14 @@
         <dialog class="dialog" id="ModalSignIn">
             <form method="dialog">
                 <div class="close">
-                    <button onclick="ModalSignIn.close()" id="btnCerrarLogin">&times</button>
+                    <button onclick="closeDialogLogin()" id="btnCerrarLogin">&times</button>
                 </div>
                 <h1>Inicio de sesión</h1>
                 <div class="fieldsContainer">
-                    <input class="textfieldInput" type="email" placeholder="Correo Electrónico" />
-                    <input class="textfieldInput" type="password" placeholder="Contraseña" />
+                    <input id="logUsuario" class="textfieldInput" type="email" placeholder="Correo Electrónico" />
+                    <div class="error-login" id="error-login-correo"></div>
+                    <inpu id="logContrasena" class="textfieldInput" type="password" placeholder="Contraseña" />
+                    <div class="error-login" id="error-login-contrasena"></div>
                 </div>
                 <div class="buttonsContainer">
                     <button class="btnEnter" id="btnIniciar" type="submit">Iniciar Sesión</button>
@@ -72,14 +74,15 @@
                 <button onclick="ModalSignUp.close()" id="btnCerrarLogin">&times</button>
                 <h1>Registro</h1>
                 <div class="fieldsContainer">
-                    <input class="textfieldInput" type="text" placeholder="Nombre" />
-                    <input class="textfieldInput" type="text" placeholder="Apellido" />
-                    <input class="textfieldInput" type="email" placeholder="Correo Electrónico" />
-                    <input class="textfieldInput" type="password" placeholder="Contraseña" />
+                    <input id="inpNombre" class="textfieldInput" type="text" placeholder="Nombre" />
+                    <input id="inpApellido" class="textfieldInput" type="text" placeholder="Apellido" />
+                    <input id="inpCorreo" class="textfieldInput" type="email" placeholder="Correo Electrónico" />
+                    <input id="inpContrasena" class="textfieldInput" type="password" placeholder="Contraseña" />
                 </div>
                 <div class="buttonsContainer">
                     <button class="btnRegistro" id="btnReg" type="submit">Registrarse</button>
                 </div>
+                <div class="error-registro" id="error-registro"></div>
             </form>
         </dialog>
 
@@ -103,6 +106,13 @@
         <div class="ven-producto-precio">
             <div class="producto">Producto</div>
             <div class="precio">10.00$</div>
+        </div>
+    </template>
+
+    <template id="nuevoProducto"
+        ><div class="ven-producto-precio">
+            <div class="producto">Producto</div>
+            <div class="precio">Precio</div>
         </div>
     </template>
 

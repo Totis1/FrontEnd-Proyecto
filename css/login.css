@@ -20,7 +20,8 @@
     width: fit-content;
     height: fit-content;
     font-family: sans-serif;
-    border: none;
+    border: 4px solid transparent;
+    /* animation: drawBorder 4s linear infinite; */
 }
 
 #btnCerrarLogin {
@@ -127,4 +128,21 @@
 
 .name {
     margin-top: 15px;
+}
+
+.error-login {
+    display: block;
+    margin-inline-start: 13px;
+    margin-block-start: 2px;
+    color: red;
+    font-size: 12px;
+}
+
+.error-registro {
+    display: block;
+    text-align: center;
+    margin-inline-start: 13px;
+    margin-block-start: 2px;
+    color: red;
+    font-size: 12px;
 }

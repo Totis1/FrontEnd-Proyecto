@@ -47,7 +47,6 @@ body {
     & svg {
         padding-bottom: 3px;
     }
-
     &:hover {
         background-color: rgba(153, 161, 209, 0.479);
         cursor: pointer;
