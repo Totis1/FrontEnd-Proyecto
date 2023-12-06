@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/general.css" />
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <div class="headerContainer">
+        <iframe id="iframe" src="../components/headerAdmin.html" frameborder="0" style="width: 100%; height: 110px"></iframe>
+    </div>
+    
+    <div class="admin-container">
+        <h1> Puestos por evaluar </h1>
+        <hr>
+        <div class="tabla-container">
+            <table id="porAceptar">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Alumno</th>
+                    <th>lista de productos</th>
+                    <th>Acciones</th>
+                </tr>
+            </table>
+        </div>
+
+        <h1> Puestos aprobados </h1>
+        <hr>
+        <div class="tabla-container">
+            <table id="aprobados">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Alumno</th>
+                    <th>lista de productos</th>
+                    <th>Acciones</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+<template id="reg">
+    <tr id="regtr" id-reg-ven="">
+        <td id="nombre" class="nombre"></td>
+        <td id="alumno" class="alumno"></td>
+        <td id="lista" class="lista"></td>
+        <td class="acciones">
+            <button id="btn-aceptar" class="btn-aceptar" id-ven="">Aceptar</button>
+            <button id="btn-rechazar" class="btn-rechazar" id-ven="">Rechazar</button>
+        </td>
+    </tr>
+</template>
+
+<script src="../js/venAdmin.js"></script>
+
+</html>

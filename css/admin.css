@@ -1,0 +1,67 @@
+.admin-container {
+    width: 100%;
+    padding-inline: 50px;
+    padding-block-start: 40px;
+}
+
+.tabla-container{
+    width: 90%;
+    padding: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid rgb(150, 150, 204);
+    padding: 8px;
+    text-align: left;
+}
+
+td {
+    font-size: 14px;
+    border: 1px solid rgb(171, 171, 208);
+}
+
+th {
+    border: 1px solid rgb(171, 171, 208);
+    background-color: #e1e1e1;
+}
+
+button {
+    color: white;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 4px 12px;
+    margin-inline: 3px;
+}
+
+.btn-aceptar {
+    background-color: #2ea44f;
+    
+}
+
+.btn-rechazar {
+    background-color: rgb(151, 0, 0);
+}
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 12px;
+    width: 90%;
+    border: 2px solid rgb(255, 166, 0);
+}
+
+.acciones {
+    width: 180px;
+    text-align: center;
+    vertical-align: middle;
+    
+}

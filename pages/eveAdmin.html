@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/general.css" />
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <div class="headerContainer">
+        <iframe id="iframe" src="../components/headerAdmin.html" frameborder="0" style="width: 100%; height: 110px"></iframe>
+    </div>
+    
+    <div class="admin-container">
+        <h1> En espera de respuesta </h1>
+        <hr class="sub-div">
+        <div class="tabla-container">
+            <table id="porAceptar">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Ponente</th>
+                    <th>Fecha</th>
+                    <th>Lugar</th>
+                    <th>T_horas</th>
+                    <th>hora evento</th>
+                    <th>HRS</th>
+                    <th>Descripcion</th>
+                    <th class="acciones">Acciones</th>
+                </tr>
+            </table>
+        </div>
+
+        <h1> Proximos eventos </h1>
+        <hr class="sub-div">
+        <div class="tabla-container">
+            <table id="aprobados">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Ponente</th>
+                    <th>Fecha</th>
+                    <th>Lugar</th>
+                    <th>T_horas</th>
+                    <th>hora evento</th>
+                    <th>Hrs</th>
+                    <th>Descripcion</th>
+                    <th>Acciones</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+<template id="reg">
+    <tr id="regtr" id-reg-eve="">
+        <td id="nombre" class="nombre"></td>
+        <td id="ponente" class="ponente"></td>
+        <td id="fecha" class="fecha"></td>
+        <td id="lugar" class="lugar"></td>
+        <td id="T_horas" class="T_horas"></td>
+        <td id="hora_evento" class="fecha"></td>
+        <td id="N_horas" class="N_horas"></td>
+        <td id="descripcion" class="descripcion"></td>
+        <td class="acciones">
+            <button id="btn-aceptar" class="btn-aceptar" id-eve="">aceptar</button>
+            <button id="btn-rechazar" class="btn-rechazar" id-eve="">rechazar</button>
+        </td>
+    </tr>
+</template>
+
+<script src="../js/eveAdmin.js"></script>
+
+</html>
