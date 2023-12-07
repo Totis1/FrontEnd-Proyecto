@@ -51,9 +51,10 @@ btnReg.addEventListener("click", (e) => {
         Correo: correo.value,
         Contraseña: contrasena.value,
         NUA: "123456",
-        Rol: "usuario",
+        Rol: "usu",
     };
     const datosJSON = JSON.stringify(datos);
+    console.log(datosJSON)
     fetch("http://localhost:8080/insertarusuario", {
         method: "post",
         body: datosJSON,
