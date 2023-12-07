@@ -22,42 +22,54 @@
 
             <span style="height: 50px"></span>
 
-            <h1>Nuevas ventas</h1>
-            <div id="vContainer" class="containerPuestos"></div>
+<template id="eCard">
+    <div class="eve-Card">
+        <div class="eve-img-container">
+            <img id="eve-img" src="https://verazinforma.com/wp-content/uploads/2017/08/veraz-informa-27.jpg
+            " alt="dsdddddd" class="eve-imgEvento">
         </div>
-    </body>
+        <div>
+            <div class="eve-info">
+                <div class="eve-titulo" id="eve-titulo"> Nombre del evento </div>
+                <div class="eve-ponente" id="eve-ponente"> Ponente: Jose Javier Peres Betancourt</div>
+                <p class="eve-descripcion" id="eve-descripcion">
+                    En esta parte se mostrará una descripción del evento a realizar la cual será dada por la persona a
+                    cargo del mismo
+                </p>
+            </div>
+            <div class="eve-infoEv" id="eve-infoEv">
+                dd-mm-yyyy | Lugar de evento | Horas
+            </div>
+        </div>
+    </div>
+</template>
 
-    <template id="eCard">
-        <div class="eve-Card">
-            <div class="eve-img-container">
-                <img src="../img/imgIcon.png" alt="" class="eve-imgEvento" />
-            </div>
-            <div>
-                <div class="eve-info">
-                    <div class="eve-titulo">Nombre del evento</div>
-                    <div class="eve-ponente">Ponente: Jose Javier Peres Betancourt</div>
-                    <p class="eve-descripcion">
-                        En esta parte se mostrará una descripción del evento a realizar la cual será dada por la persona
-                        a cargo del mismo
-                    </p>
-                </div>
-                <div class="eve-infoEv">dd-mm-yyyy | Lugar de evento | Horas</div>
-            </div>
+<template id="vCard">
+    <div class="ven-card">
+        <div class="ven-img-pcontainer">
+            <img id="ven-img" src="../img/imgIcon.png" alt="" class="ven-imgPuesto">
         </div>
-    </template>
+        <div id="nombre-puesto" class="ven-nombrePuesto">
+            NOMBRE DEL PUESTO
+        </div>
+        <hr style="height: 3px; background-color: #09004e;">
+        <div id="listaProductos" class="ven-productosContainer">
+            
+        </div>
+        <hr style="width: 90%; margin: 0 auto">
+        <div class="row">
+            <h4> ver mas</h4>
+            <!-- <button class="ven-btnVerMas"> + </button> -->
+        </div>
+    </div>
+</template>
 
-    <template id="vCard">
-        <div class="ven-card">
-            <div class="ven-img-pcontainer">
-                <img src="../img/imgIcon.png" alt="" class="ven-imgPuesto" />
-            </div>
-            <div class="ven-nombrePuesto">NOMBRE DEL PUESTO</div>
-            <hr style="background-color: black; width: 90%; height: 1px; border-radius: 3px; border: none" />
-            <div id="listaProductos" class="ven-productosContainer"></div>
-            <hr style="background-color: black; width: 90%; height: 1px; border-radius: 3px; border: none" />
-            <button id="btnVerMas" class="ven-btnVerMas">Ver más</button>
-        </div>
-    </template>
+<template id="vNuevoProducto"">
+    <div class="ven-producto-precio">
+        <div id="producto" class="producto">Producto</div>
+        <div id="precio" class="precio"> Precio </div>
+    </div>
+</template>
 
     <template id="vNuevoProducto">
         <div class="ven-producto-precio">
