@@ -29,22 +29,22 @@ const modificarPuesto = (data, val, id) => {
 const btnAceptar = (data, e) => {
     const val = '102'
     const id = e.target.getAttribute("id-ven")
-    // modificarPuesto(data, val, id)
+    modificarPuesto(data, val, id)
      console.log('btnAceptar')
 
-    // document.querySelector('[id-reg-ven="' + id + '"]').remove()
-    // data.validacion = val
-    // cargaDatos(data)
-    // document.querySelector('[id-ven="' + id + '"]').addEventListener('click', btnEliminar)
+    document.querySelector('[id-reg-ven="' + id + '"]').remove()
+    data.validacion = val
+    cargaDatos(data)
+    document.querySelector('[id-ven="' + id + '"]').addEventListener('click', btnEliminar)
 }
 
 const btnRechazar = (data,e) => {
     const val = '103'
     const id = e.target.getAttribute("id-ven")
     console.log('btnRechazar')
-//     modificarPuesto(data, val, id)
+    modificarPuesto(data, val, id)
 
-//     document.querySelector('[id-reg-ven="' + id + '"]').remove()
+    document.querySelector('[id-reg-ven="' + id + '"]').remove()
  }
 
 const btnEliminar = (e) => {
@@ -157,6 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if ( data.data[ii].validacion === '102' ) {
                 console.log("102")
                 btn.addEventListener('click', btnEliminar)
+    
             } 
             
 
