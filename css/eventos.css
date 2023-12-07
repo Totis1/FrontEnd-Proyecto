@@ -1,12 +1,19 @@
+.containerEventos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 20px 0px;
+    width: fit-content;
+}
+
 .eve-Card {
     display: flex;
     flex-direction: row;
-    align-items: center;
     gap: 20px;
 
-    min-height: fit-content;
-    height: 200px;
-    width: fit-content;
+    height: fit-content;
+    min-height: 200px;
+    width: auto;
     padding: 24px;
 
     background-color: rgb(255, 255, 255);
@@ -14,51 +21,57 @@
     border-radius: 8px;
 }
 
-.containerEventos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    padding: 20px 20px;
-    width: fit-content;
+.eve-img-container {
+    width: 350px;
+    height: 100%;
+    aspect-ratio: 2/3;
+
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
-.eve-img-container {
-    height: 180px;
-    width: 180px;
+.eve-Content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+
+    width: 100%;
 }
 
 .eve-imgEvento {
+    width: fit-content;
     height: 100%;
-    width: auto;
 }
 
 .eve-info {
-    height: 180px;
-    width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    height: fit-content;
 }
 
 .eve-titulo {
-    align-items: center;
-    justify-content: center;
-    padding-block-start: 5px;
-    padding-block-end: 8px;
-    text-align: center;
-    font-size: 30px;
+    width: 100%;
+    font-size: x-large;
     font-weight: 700;
 }
 
 .eve-ponente {
+    width: 100%;
+
     font-size: 14px;
     color: rgb(180, 180, 180);
-    padding-inline: 12px;
 }
 
 .eve-descripcion {
     align-items: center;
     justify-content: center;
-    margin-block-start: 8px;
-    margin-block-end: 17px;
-    padding-inline: 12px;
 
     text-align: start;
     font-size: 16px;
@@ -69,6 +82,4 @@
     font-size: 14px;
     color: rgb(92, 92, 92);
     text-align: end;
-    margin-inline-end: 15px;
-    margin-block-end: 5px;
 }

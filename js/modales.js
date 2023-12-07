@@ -54,7 +54,7 @@ btnReg.addEventListener("click", (e) => {
         Rol: "usuario",
     };
     const datosJSON = JSON.stringify(datos);
-    fetch("http://localhost:5000/insertarusuario", {
+    fetch("http://localhost:8080/insertarusuario", {
         method: "post",
         body: datosJSON,
         headers: {
@@ -96,7 +96,7 @@ btnLogin.addEventListener("click", (e) => {
     console.log(datosJSON);
     console.log(datos);
 
-    fetch("http://localhost:5000/login", {
+    fetch("http://localhost:8080/login", {
         method: "post",
         body: datosJSON,
         headers: {

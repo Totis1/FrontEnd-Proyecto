@@ -96,8 +96,18 @@
                 <h1>Agregar</h1>
                 <div class="fieldsContainer">
                     <input class="textfieldInput" type="text" placeholder="Nombre del puesto" />
-                    <input class="textfieldInput" type="text" placeholder="Nombre del producto" />
-                    <input class="textfieldInput" type="text" placeholder="Precio" />
+                    <div class="productsContainer" id="productsContainer">
+                        <div class="product">
+                            <input
+                                class="textfieldInput nombreProducto"
+                                type="text"
+                                placeholder="Nombre del producto"
+                            />
+                            <input class="textfieldInput precioProducto" type="text" placeholder="Precio" />
+                            <i class="deleteProduct" id="deleteProduct">x</i>
+                        </div>
+                    </div>
+                    <button type="button" class="addMore" id="addMore">Agregar otro producto</button>
                 </div>
                 <div class="buttonsContainer">
                     <button class="btnRegistro" id="btnReg" type="submit">Agregar</button>
