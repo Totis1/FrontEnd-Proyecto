@@ -3,7 +3,7 @@ const SignUp = document.getElementById("ModalSignUp");
 const Agregar = document.getElementById("ModalAgregar");
 const openSignIn = document.getElementById("btnAbrirLogin");
 const openSignUp = document.getElementById("btnNuevaCuenta");
-const openAgregar = document.getElementById("btnVentasAgregar");
+//const openAgregar = document.getElementById("btnVentasAgregar");
 
 const btnReg = document.getElementById("btnReg");
 const nombre = document.getElementById("inpNombre");
@@ -29,10 +29,10 @@ openSignUp.addEventListener("click", () => {
     SignIn.close();
 });
 
-openAgregar.addEventListener("click", () => {
-    //console.log("test");
-    Agregar.showModal();
-});
+// openAgregar.addEventListener("click", () => {
+//     //console.log("test");
+//     Agregar.showModal();
+// });
 
 // Registro usuario -------------------------
 btnReg.addEventListener("click", (e) => {
@@ -80,6 +80,7 @@ btnReg.addEventListener("click", (e) => {
 // Login ------------------------------------
 btnLogin.addEventListener("click", (e) => {
     e.preventDefault();
+    console.log("oooll")
 
     if (!logUsuario.value || !logContrasena.value) {
         console.log("==> error");
@@ -110,7 +111,8 @@ btnLogin.addEventListener("click", (e) => {
 
             if (data.alert == "success") {
                 console.log("bienvenido");
-                window.location.href = "";
+                const reff = e.target.getAttribute('dest')
+                window.location.href = reff;
             }
 
             if (data.alert == "Correo Incorrecto") {
