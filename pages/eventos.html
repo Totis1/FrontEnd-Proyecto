@@ -79,13 +79,13 @@
                 </div>
                 <h1>Inicio de sesión</h1>
                 <div class="fieldsContainer">
-                    <input id="logUsuario" class="textfieldInput" type="email" placeholder="Correo Electrónico" />
+                    <input id="logUsuario" class="textfieldInput" type="email" placeholder="Correo Electrónico" required />
                     <div class="error-login" id="error-login-correo"></div>
-                    <input id="logContrasena" class="textfieldInput" type="password" placeholder="Contraseña" />
+                    <input id="logContrasena" class="textfieldInput" type="password" placeholder="Contraseña" required/>
                     <div class="error-login" id="error-login-contrasena"></div>
                 </div>
                 <div class="buttonsContainer">
-                    <button class="btnEnter" id="btnIniciar" type="submit">Iniciar Sesión</button>
+                    <button onclick="window.location.href='./misEventos.html'" class="btnEnter" id="btnIniciar" type="submit">Iniciar Sesión</button>
                     <button class="btnRegistro" id="btnNuevaCuenta" type="button">Crear nueva cuenta</button>
                 </div>
             </form>
@@ -97,13 +97,13 @@
                 <button onclick="ModalSignUp.close()" id="btnCerrarLogin">&times</button>
                 <h1>Registro</h1>
                 <div class="fieldsContainer">
-                    <input id="inpNombre" class="textfieldInput" type="text" placeholder="Nombre" />
-                    <input id="inpApellido" class="textfieldInput" type="text" placeholder="Apellido" />
-                    <input id="inpCorreo" class="textfieldInput" type="email" placeholder="Correo Electrónico" />
-                    <input id="inpContrasena" class="textfieldInput" type="password" placeholder="Contraseña" />
+                    <input id="inpNombre" class="textfieldInput" type="text" placeholder="Nombre" required />
+                    <input id="inpApellido" class="textfieldInput" type="text" placeholder="Apellido" required/>
+                    <input id="inpCorreo" class="textfieldInput" type="email" placeholder="Correo Electrónico" required />
+                    <input id="inpContrasena" class="textfieldInput" type="password" placeholder="Contraseña" required/>
                 </div>
                 <div class="buttonsContainer">
-                    <button class="btnRegistro" id="btnReg" type="submit">Registrarse</button>
+                    <button onclick="window.location.href='./misEventos.html'" class="btnRegistro" id="btnReg" type="submit">Registrarse</button>
                 </div>
                 <div class="error-registro" id="error-registro"></div>
             </form>

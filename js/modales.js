@@ -110,7 +110,7 @@ btnLogin.addEventListener("click", (e) => {
 
             if (data.alert == "success") {
                 console.log("bienvenido");
-                window.location.href = "";
+                window.location.href = "http://localhost:8080/misEventos";
             }
 
             if (data.alert == "Correo Incorrecto") {
