@@ -7,6 +7,36 @@ const vcard = document.getElementById("vCard").content;
 const vcontainer = document.getElementById("vContainer");
 const vnewProduct = document.getElementById("vNuevoProducto").content;
 
+const verMas = (e) => {
+    const id = e.target.getAttribute("idbtn");
+
+    // If there is already an open list
+    if (vmAbi != -1) {
+        const lp = document.querySelector('[idlp="' + vmAbi + '"]');
+        let num_productos;
+
+        do {
+            lp.removeChild(lp.lastChild);
+            num_productos = lp.getElementsByClassName("ven-producto-precio").length;
+        } while (num_productos > 3);
+    }
+
+    // If the expanded list is different or there was no expanded list
+    if (vmAbi != id) {
+        const lp = document.querySelector('[idlp="' + id + '"]');
+        for (u = 0; u <= pr_res[id].length; u += 1) {
+            newProduct.getElementById("producto").textContent = pr_res[id][u];
+            newProduct.getElementById("precio").textContent = pr_pre[id][u];
+            const clone = newProduct.cloneNode(true);
+            fragment.appendChild(clone);
+            lp.appendChild(fragment);
+        }
+        vmAbi = id;
+    } else {
+        vmAbi = -1;
+    }
+};
+
 const desplegarEventos = () => {
     fetch("http://localhost:8080/traereventos", {
         method: "get",
