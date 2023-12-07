@@ -25,16 +25,11 @@
 .eve-img-container {
     height: 180px;
     width: 180px;
-    overflow: hidden;
 }
 
 .eve-imgEvento {
     height: 100%;
     width: auto;
-    position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .eve-info {

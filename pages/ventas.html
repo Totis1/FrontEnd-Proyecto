@@ -94,25 +94,18 @@
             <div class="ven-img-pcontainer">
                 <img src="../img/imgIcon.png" class="ven-imgPuesto" />
             </div>
-
-            <div>
-                <button class="btnRegistro" id="btnReg" type="submit">Registrarse</button>
-            </div>
-            <div class="error-registro" id="error-registro"></div>
-        </form>
-    </dialog>
-
-    <script src="../js/modales.js"></script>
-</body>
-
-<template id="card">
-    <div id="ven-card" class="ven-card" idlpc="">
-        <div class="ven-img-pcontainer">
-            <img id="img-ven" src="../img/imgIcon.png" alt="" class="ven-imgPuesto">
+            <div class="ven-nombrePuesto">Nombre del puesto</div>
+            <hr style="background-color: black; width: 90%; height: 1px; border-radius: 3px; border: none" />
+            <div id="listaProductos" class="ven-productosContainer"></div>
+            <hr style="background-color: black; width: 90%; height: 1px; border-radius: 3px; border: none" />
+            <button id="btnVerMas" class="ven-btnVerMas">Ver más</button>
         </div>
-        <div id="nombre-puesto" class="ven-nombrePuesto">
-            NOMBRE DEL PUESTO
+    </template>
 
+    <template id="nuevoProducto">
+        <div class="ven-producto-precio">
+            <div class="producto">Producto</div>
+            <div class="precio">10.00$</div>
         </div>
     </template>
 
@@ -126,3 +119,15 @@
     <script src="../js/ventas.js"></script>
 </html>
 
+<script>
+    const btnIniciar = document.getElementById("btnIniciar");
+    const btnReg = document.getElementById("btnReg");
+
+    btnIniciar.addEventListener("click", () => {
+        window.parent.location.href = "../pages/misventas.html";
+    });
+
+    btnReg.addEventListener("click", () => {
+        window.parent.location.href = "../pages/misventas.html";
+    });
+</script>
