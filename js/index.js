@@ -88,33 +88,38 @@ const desplegarPuestos = () => {
     })
         .then((response) => response.json())
         .then((data) => {
-            for (let j = 1, i = 1; j <= 4; j++, i++) {
+            for (let j = 1, i = 0; j <= 4; j++, i++) {
+                console.log('ddddd ' + data.data[i].validacion)
+                console.log(j + '  ->' + i )
+
                 if (data.data[i] == undefined || data.data[i].validacion != "102") {
-                    i--;
-                    console.log("olaaa");
-                    return;
+                    j--;
+                    console.log("olaaa" + j);
+                } else {
+                    const listProducts = vcard.getElementById("listaProductos");
+                    vcard.getElementById("ven-img").setAttribute("src", data.data[i].url_imagen);
+                    vcard.getElementById("nombre-puesto").textContent = data.data[i].Nombre_puesto;
+                    const lpkey = Object.keys(data.data[i].productos);
+                    console.log("@@@" + lpkey.length);
+
+                    vcard.getElementById("listaProductos").innerHTML = "";
+
+                    for (let u = 1; u <= lpkey.length; u++) {
+                        vnewProduct.getElementById("producto").textContent = data.data[i].productos[u].nombre;
+                        vnewProduct.getElementById("precio").textContent = data.data[i].productos[u].precio;
+
+                        const cloneP = vnewProduct.cloneNode(true);
+                        fragment.appendChild(cloneP);
+                        listProducts.appendChild(fragment);
+                    }
+
+                    const clone = vcard.cloneNode(true);
+                    fragment.appendChild(clone);
+                    vcontainer.appendChild(fragment);
+                    console.log('ldldldlldldld' )
                 }
 
-                const listProducts = vcard.getElementById("listaProductos");
-                vcard.getElementById("ven-img").setAttribute("src", data.data[i].url_imagen);
-                vcard.getElementById("nombre-puesto").textContent = data.data[i].Nombre_puesto;
-                const lpkey = Object.keys(data.data[i].productos);
-                console.log("@@@" + data.data[i].productos[1].nombre);
-
-                vcard.getElementById("listaProductos").innerHTML = "";
-
-                for (let u = 1; u <= lpkey.length; u++) {
-                    vnewProduct.getElementById("producto").textContent = data.data[i].productos[u].nombre;
-                    vnewProduct.getElementById("precio").textContent = data.data[i].productos[u].precio;
-
-                    const cloneP = vnewProduct.cloneNode(true);
-                    fragment.appendChild(cloneP);
-                    listProducts.appendChild(fragment);
-                }
-
-                const clone = vcard.cloneNode(true);
-                fragment.appendChild(clone);
-                vcontainer.appendChild(fragment);
+                
             }
         });
 };
