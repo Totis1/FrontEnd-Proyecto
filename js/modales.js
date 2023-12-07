@@ -51,9 +51,10 @@ btnReg.addEventListener("click", (e) => {
         Correo: correo.value,
         Contraseña: contrasena.value,
         NUA: "123456",
-        Rol: "usuario",
+        Rol: "usu",
     };
     const datosJSON = JSON.stringify(datos);
+    console.log(datosJSON);
     fetch("http://localhost:8080/insertarusuario", {
         method: "post",
         body: datosJSON,
@@ -80,7 +81,7 @@ btnReg.addEventListener("click", (e) => {
 // Login ------------------------------------
 btnLogin.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log("oooll")
+    console.log("oooll");
 
     if (!logUsuario.value || !logContrasena.value) {
         console.log("==> error");
@@ -111,7 +112,7 @@ btnLogin.addEventListener("click", (e) => {
 
             if (data.alert == "success") {
                 console.log("bienvenido");
-                const reff = e.target.getAttribute('dest')
+                const reff = e.target.getAttribute("dest");
                 window.location.href = reff;
             }
 
