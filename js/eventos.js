@@ -1,10 +1,11 @@
-const ecard = document.getElementById('eCard').content
-const epr = document.getElementById('pr')
-const econtainer = document.getElementById('eContainer')
-const fragment = document.createDocumentFragment()
+const ecard = document.getElementById("eCard").content;
+const epr = document.getElementById("pr");
+const econtainer = document.getElementById("eContainer");
+const fragment = document.createDocumentFragment();
 
 
 const desplegarEventos = () => {
+
     fetch('http://localhost:5000/traereventos', {
         method: 'get'
     }).then(response => response.json()).then(data => {
@@ -40,3 +41,4 @@ const desplegarEventos = () => {
 window.addEventListener('DOMContentLoaded', () => {
     desplegarEventos()
 })
+

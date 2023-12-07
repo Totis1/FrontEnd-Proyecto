@@ -1,53 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
-</head>
-<body>
-    <header>
-        <div class="cLogoUG">
-            <img src="../img/logoUG1.png" alt="" class="logoUG">
-            <img src="../img/UniversidadDeGuanajuato.png" alt="" class="UdG">
-        </div>
-        <hr style="background-color: rgb(255, 208, 0); width: 93%; height: 2px; border-radius: 3px; margin: 0 auto">
-        <div class="menu">
-            <button id="btnInicio" class="menuButton"> Inicio </button>
-            <button id="btnEventos" class="menuButton"> Eventos </button>
-            <button id="btnVentas" class="menuButton"> Ventas </button>
-            <div class="menuAdm">
-                <button id="btnVentas" class="menuButton"> Opciones de Administrador </button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/header.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <header>
+            <div class="cLogoUG">
+                <img src="../img/logoUG1.png" alt="" class="logoUG" />
+                <img src="../img/UniversidadDeGuanajuato.png" alt="" class="UdG" />
             </div>
-        </div>
-    </header>
-</body>
-
-
-
+            <hr
+                style="background-color: rgb(255, 208, 0); width: 93%; height: 2px; border-radius: 3px; margin: 0 auto"
+            />
+            <div class="menu">
+                <button id="btnInicio" class="menuButton">Inicio</button>
+                <button id="btnEventos" class="menuButton">Eventos</button>
+                <button id="btnVentas" class="menuButton">Ventas</button>
+                <div class="menuAdm">
+                    <button id="btnVentas" class="menuButton">Opciones de Administrador</button>
+                </div>
+            </div>
+        </header>
+    </body>
 </html>
 
 <script>
-const btnInicio = document.getElementById('btnInicio')
-const btnEventos = document.getElementById('btnEventos')
-const btnVentas = document.getElementById('btnVentas')
+    const btnInicio = document.getElementById("btnInicio");
+    const btnEventos = document.getElementById("btnEventos");
+    const btnVentas = document.getElementById("btnVentas");
 
-btnInicio.addEventListener('click', () => {
-    window.parent.location.href = '../pages/index.html'
-})
+    btnInicio.addEventListener("click", () => {
+        window.parent.location.href = "../pages/index.html";
+    });
 
-btnEventos.addEventListener('click', () => {
-    window.parent.location.href = '../pages/eventos.html'
-})
+    btnEventos.addEventListener("click", () => {
+        window.parent.location.href = "../pages/eventos.html";
+    });
 
-btnVentas.addEventListener('click', () => {
-    window.parent.location.href = '../pages/ventas.html'
-})
-
-
-
+    btnVentas.addEventListener("click", () => {
+        window.parent.location.href = "../pages/ventas.html";
+    });
 </script>

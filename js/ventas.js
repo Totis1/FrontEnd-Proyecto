@@ -1,10 +1,11 @@
-const card = document.getElementById('card').content
-const containerEve = document.getElementById('containerPuestos')
-const fragment = document.createDocumentFragment()
-const newProduct = document.getElementById('nuevoProducto').content
+const card = document.getElementById("card").content;
+const containerEve = document.getElementById("containerPuestos");
+const fragment = document.createDocumentFragment();
+const newProduct = document.getElementById("nuevoProducto").content;
 
-const slides = document.querySelectorAll('.ven-slide')
+const slides = document.querySelectorAll(".ven-slide");
 let nSlides = 0;
+
 
 let idenLP = 0;
 let pr_res = []
@@ -12,28 +13,27 @@ let pr_pre = []
 let vmAbi = -1;
 
 
+//change verMas to toggleProductList.
 const verMas = (e) => {
-    const id = e.target.getAttribute("idbtn")
-    
-    
+    const id = e.target.getAttribute("idbtn");
+
     //Ya hay algo abierto
-    if( vmAbi != -1 ){
-        const lp = document.querySelector('[idlp="' + vmAbi + '"]')
-        const lpc = document.querySelector('[idlpc="' + vmAbi + '"]')
+    if (openListId != -1) {
+        const lp = document.querySelector('[idlp="' + openListId + '"]');
+        const lpc = document.querySelector('[idlpc="' + openListId + '"]');
         let num_productos;
-        
+
         //lpc.style.height = lpc.offsetHeight + 'px';
-
-        do{
-            lp.removeChild(lp.lastChild)
-            num_productos = lp.getElementsByClassName('ven-producto-precio').length
-            console.log(num_productos)
-        } while ( num_productos > 3)
-
+        do {
+            lp.removeChild(lp.lastChild);
+            num_productos = lp.getElementsByClassName("ven-producto-precio").length;
+            console.log(num_productos);
+        } while (num_productos > 3);
         //lpc.style.height = 'auto'
     }
 
     //La lista desplegada es distinta o no había lista desplegada
+
     if( vmAbi != id ){
         const lp = document.querySelector('[idlp="' + id + '"]')
         console.log(pr_res[id])
@@ -44,10 +44,11 @@ const verMas = (e) => {
             fragment.appendChild(clone)
             lp.appendChild(fragment)
         }
-        vmAbi = id;
+        openListId = id;
     } else {
-        vmAbi = -1;
+        openListId = -1;
     }
+
 }
 
 const desplegarPuestos = () => {
@@ -111,28 +112,36 @@ window.addEventListener('DOMContentLoaded', () => {
     containerEve.innerHTML = ''
     desplegarPuestos()
 
-    
-  
-})
 
+    btnVerMas.forEach((btn) => {
+        btn.addEventListener("click", verMas);
+    });
+});
 
-const showSlides = () => {
-    slides[ nSlides ].style.animation = 'suno 1s'
-    
-    setTimeout( () => {
-        
-        slides[ nSlides ].style.display = 'none'
-        if ( nSlides === slides.length-1 ){
+const displaySlides = () => {
+    if (slides.length === 0) {
+        return;
+    }
+
+    // console.log("Slide # currently showing: " + nSlides); // hide console logs. also describe what it does.
+    // console.log("-->" + slides); // ?
+    slides[nSlides].style.animation = "suno 1s";
+
+    setTimeout(() => {
+        slides[nSlides].style.display = "none";
+        if (nSlides === slides.length - 1) {
             nSlides = 0;
         } else {
             nSlides += 1;
         }
 
-        
-        slides[ nSlides ].style.animation = 'sdos 1s'
-        slides[ nSlides ].style.display = 'block'
-    }, 950)
-}
+        slides[nSlides].style.animation = "sdos 1s";
+        slides[nSlides].style.display = "block";
+    }, 950);
+};
 
-setInterval( showSlides, 900*6 )
-
+setInterval(() => {
+    if (slides.length > 0) {
+        displaySlides();
+    }
+}, 900 * 6);

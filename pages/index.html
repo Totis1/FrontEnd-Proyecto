@@ -1,34 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/inicio.css">
-    <link rel="stylesheet" href="../css/eventos.css">
-    <link rel="stylesheet" href="../css/general.css">
-    <link rel="stylesheet" href="../css/ventas.css">    <link rel="preconnect" href="https://fonts.googleapis.com">
-
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/inicio.css" />
+        <link rel="stylesheet" href="../css/eventos.css" />
+        <link rel="stylesheet" href="../css/general.css" />
+        <link rel="stylesheet" href="../css/ventas.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
     </head>
 
-<body>
-    <div class="headerContainer">
-        <iframe src="../components/header.html" frameborder="0" style="width: 100%; height: 110px;"></iframe>
-    </div>
+    <body>
+        <div class="headerContainer">
+            <iframe src="../components/header.html" frameborder="0" style="width: 100%; height: 110px"></iframe>
+        </div>
 
-    <div class="container">
-        <h1> Proximos eventos </h1>
-        <hr style="background-color:#09004e; width: 90%; height: 1px; border-radius: 3px; margin: 0 auto">
-        <div id="eContainer" class="container"></div>
-        
-        <span style="height:50px"></span>
+        <div class="container">
+            <h1>Proximos eventos</h1>
+            <div id="eContainer" class="containerEventos"></div>
 
-        <h1> Nuevas ventas </h1>
-        <hr style="background-color:#09004e; width: 90%; height: 1px; border-radius: 3px; margin: 0 auto">
-        <div id="vContainer" class="containerPuestos"></div>
-    </div>
-</body>
+            <span style="height: 50px"></span>
 
 <template id="eCard">
     <div class="eve-Card">
@@ -79,6 +71,12 @@
     </div>
 </template>
 
-<script src="../js/index.js"></script>
+    <template id="vNuevoProducto">
+        <div class="ven-producto-precio">
+            <div class="producto">Producto</div>
+            <div class="precio">Precio</div>
+        </div>
+    </template>
 
+    <script src="../js/index.js"></script>
 </html>

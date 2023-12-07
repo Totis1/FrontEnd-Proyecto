@@ -1,11 +1,12 @@
-const ecard = document.getElementById('eCard').content
-const epr = document.getElementById('pr')
-const econtainer = document.getElementById('eContainer')
-const fragment = document.createDocumentFragment()
+const ecard = document.getElementById("eCard").content;
+const epr = document.getElementById("pr");
+const econtainer = document.getElementById("eContainer");
+const fragment = document.createDocumentFragment();
 
-const vcard = document.getElementById('vCard').content
-const vcontainer = document.getElementById('vContainer')
-const vnewProduct = document.getElementById('vNuevoProducto').content
+const vcard = document.getElementById("vCard").content;
+const vcontainer = document.getElementById("vContainer");
+const vnewProduct = document.getElementById("vNuevoProducto").content;
+
 
 const desplegarEventos = () => {
     fetch('http://localhost:5000/traereventos', {
@@ -101,6 +102,4 @@ window.addEventListener('DOMContentLoaded', () => {
     const nE = 3;
     desplegarEventos()
     desplegarPuestos()
-   
-
-})
+});

@@ -1,23 +1,34 @@
-.eve-Card{
-    height: auto;
-    width: 800px;
-    margin-block-end: 30px;
+.eve-Card {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-inline-start: 20px;
-    padding-block: 10px;
-    background-color: white;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1)
+    gap: 20px;
+
+    min-height: fit-content;
+    height: 200px;
+    width: fit-content;
+    padding: 24px;
+
+    background-color: rgb(255, 255, 255);
+    border: 1px solid gray;
+    border-radius: 8px;
 }
 
-.eve-img-container{
+.containerEventos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 20px 20px;
+    width: fit-content;
+}
+
+.eve-img-container {
     height: 180px;
     width: 180px;
     overflow: hidden;
 }
 
-.eve-imgEvento{
+.eve-imgEvento {
     height: 100%;
     width: auto;
     position: relative;
@@ -26,13 +37,12 @@
   transform: translate(-50%, -50%);
 }
 
-.eve-info{
-    height: auto;
+.eve-info {
+    height: 180px;
     width: 560px;
-    margin-inline-start: 40px;
 }
 
-.eve-titulo{
+.eve-titulo {
     align-items: center;
     justify-content: center;
     padding-block-start: 5px;
@@ -40,16 +50,15 @@
     text-align: center;
     font-size: 30px;
     font-weight: 700;
-
 }
 
-.eve-ponente{
+.eve-ponente {
     font-size: 14px;
-    color: rgb(92, 92, 92);
+    color: rgb(180, 180, 180);
     padding-inline: 12px;
 }
 
-.eve-descripcion{
+.eve-descripcion {
     align-items: center;
     justify-content: center;
     margin-block-start: 8px;
@@ -59,10 +68,9 @@
     text-align: start;
     font-size: 16px;
     font-weight: 300;
-
 }
 
-.eve-infoEv{
+.eve-infoEv {
     font-size: 14px;
     color: rgb(92, 92, 92);
     text-align: end;
