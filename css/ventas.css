@@ -165,15 +165,19 @@
 }
 
 .ven-img-pcontainer {
-    display: flex;
-    justify-content: center;
-    height: 200px;
-    width: 235px;
-}
+    height: 180px;
+    width: 180px;
+    overflow: hidden;
+    background-color: rgb(237, 237, 237);
+
 
 .ven-imgPuesto {
     height: 100%;
     width: auto;
+    position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .ven-nombrePuesto {
