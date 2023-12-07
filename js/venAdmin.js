@@ -157,7 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if ( data.data[ii].validacion === '102' ) {
                 console.log("102")
                 btn.addEventListener('click', btnEliminar)
-    
             } 
             
 
