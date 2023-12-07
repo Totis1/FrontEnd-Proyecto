@@ -80,7 +80,7 @@ const btnEliminar = (e) => {
 };
 
 const cargaDatos = (dato, ind) => {
-    //console.log(dato)
+    console.log(dato)
     reg.getElementById("regtr").setAttribute("id-reg-eve", dato.id_evento);
     reg.getElementById("btn-aceptar").setAttribute("id-eve", dato.id_evento);
     reg.getElementById("btn-rechazar").setAttribute("id-eve", dato.id_evento);
@@ -120,7 +120,7 @@ const controlAcceso = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    //controlAcceso()
+    controlAcceso()
 
     fetch("http://localhost:8080/traereventos", {
         method: "get",

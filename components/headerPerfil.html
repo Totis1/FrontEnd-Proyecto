@@ -21,28 +21,22 @@
                 style="background-color: rgb(255, 208, 0); width: 93%; height: 2px; border-radius: 3px; margin: 0 auto"
             />
             <div class="menu">
-                <button id="btnInicio" class="menuButton">Inicio</button>
-                <button id="btnEventos" class="menuButton">Eventos</button>
-                <button id="btnVentas" class="menuButton">Ventas</button>
+                <button id="btnEventos" class="menuButton">Mis Eventos</button>
+                <button id="btnVentas" class="menuButton">Mis Ventas</button>
             </div>
         </header>
     </body>
 </html>
 
 <script>
-    const btnInicio = document.getElementById("btnInicio");
     const btnEventos = document.getElementById("btnEventos");
     const btnVentas = document.getElementById("btnVentas");
 
-    btnInicio.addEventListener("click", () => {
-        window.parent.location.href = "../pages/index.html";
-    });
-
     btnEventos.addEventListener("click", () => {
-        window.parent.location.href = "../pages/eventos.html";
+        window.parent.location.href = "../pages/misEventos.html";
     });
 
     btnVentas.addEventListener("click", () => {
-        window.parent.location.href = "../pages/ventas.html";
+        window.parent.location.href = "../pages/misVentas.html";
     });
 </script>
