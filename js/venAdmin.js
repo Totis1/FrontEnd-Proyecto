@@ -29,29 +29,53 @@ const modificarPuesto = (data, val, id) => {
 const btnAceptar = (data, e) => {
     const val = '102'
     const id = e.target.getAttribute("id-ven")
-    modificarPuesto(data, val, id)
-    console.log('btnAceptar')
+    // modificarPuesto(data, val, id)
+     console.log('btnAceptar')
 
-    document.querySelector('[id-reg-ven="' + id + '"]').remove()
-    data.validacion = val
-    cargaDatos(data)
-    document.querySelector('[id-ven="' + id + '"]').addEventListener('click', btnEliminar)
+    // document.querySelector('[id-reg-ven="' + id + '"]').remove()
+    // data.validacion = val
+    // cargaDatos(data)
+    // document.querySelector('[id-ven="' + id + '"]').addEventListener('click', btnEliminar)
 }
 
 const btnRechazar = (data,e) => {
     const val = '103'
     const id = e.target.getAttribute("id-ven")
     console.log('btnRechazar')
-    modificarPuesto(data, val, id)
+//     modificarPuesto(data, val, id)
+
+//     document.querySelector('[id-reg-ven="' + id + '"]').remove()
+ }
+
+const btnEliminar = (e) => {
+    const id = e.target.getAttribute("id-ven")
+    console.log("---s->" + id)
+
+
+    const datos = {
+        id_puesto: id
+    }
+
+    const datosJSON = JSON.stringify(datos)
+
+    fetch("http://localhost:5000/eliminarpuesto", {
+        method: "post",
+        body: datosJSON,
+        headers: {
+            "Content-Type": "application/json",
+        }
+    }).then((response) => response.json())
+    .then((data) => {  console.log(data) })
 
     document.querySelector('[id-reg-ven="' + id + '"]').remove()
 }
 
-const cargaDatos = (dato) => {
+const cargaDatos = (dato, ind) => {
     console.log(dato)
     reg.getElementById('regtr').setAttribute("id-reg-ven", dato.id_puesto)
     reg.getElementById('btn-aceptar').setAttribute("id-ven", dato.id_puesto)
     reg.getElementById('btn-rechazar').setAttribute("id-ven", dato.id_puesto)
+    reg.getElementById('btn-rechazar').setAttribute("id-info", ind)
 
     reg.getElementById('nombre').textContent = dato.Nombre_puesto
     reg.getElementById('alumno').textContent = dato.id_dueño
@@ -86,18 +110,12 @@ const cargaDatos = (dato) => {
     tabla.appendChild(fragment)
 }
 
-const btnEliminar = (e) => {
-    const id = e.target.getAttribute("id-ven")
-    console.log("---s->" + id)
 
-
-    document.querySelector('[id-reg-ven="' + id + '"]').remove()
-}
 
 const controlAcceso = () => {
     const ruta = document.referrer.split('/')
     const rutaRef = ruta[ruta.length - 1]
-    if (rutaRef !== 'loginAdmin.html') {
+    if (rutaRef != 'loginAdmin.html' && rutaRef != 'headerAdmin.html') {
         window.location.href = './loginAdmin.html'
     }
 }
@@ -111,31 +129,38 @@ document.addEventListener('DOMContentLoaded', () => {
     .then((response) => response.json())
     .then((data) => {
 
-
+        let ind = 0
         data.data.forEach((dato) => {
-            //console.log(dato.validacion)
-            if ( dato.validacion !== "103" ) {
-                cargaDatos(dato)
+            //console.log("@@@ " + dato)
+            if ( dato.validacion != "103" ) {
+                cargaDatos(dato, ind)
+                console.log(dato)
             }
-
+            ind++
+            
         } )
+
         const btn_aceptar = document.querySelectorAll(".btn-aceptar")
         const btn_rechazar = document.querySelectorAll(".btn-rechazar")
         console.log(btn_aceptar)
         let contA = 0
         btn_rechazar.forEach((btn, i) => {
-           
-            if ( data.data[i].validacion === '101' ) {
-                console.log("---->" + data.data[i].id_puesto)
-                btn.addEventListener('click', btnRechazar.bind(null,data.data[i]))
-                btn_aceptar[contA].addEventListener('click', btnAceptar.bind(null,data.data[i]))
+            const ii = btn.getAttribute('id-info')
+           console.log(ii)
+            if ( data.data[ii].validacion === '101' ) {
+                console.log("101")
+                btn.addEventListener('click', btnRechazar.bind(null,data.data[ii]))
+                btn_aceptar[contA].addEventListener('click', btnAceptar.bind(null,data.data[ii]))
                 contA += 1
-            }
-            if ( data.data[i].validacion === '102' ) {
-                console.log("@@@ " + data.data[i])
-               btn.addEventListener('click', btnEliminar)
-            }
+                
+            } 
+            if ( data.data[ii].validacion === '102' ) {
+                console.log("102")
+                btn.addEventListener('click', btnEliminar)
+    
+            } 
             
+
         })
 
 

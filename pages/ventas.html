@@ -92,9 +92,9 @@
     <template id="card">
         <div id="ven-card" class="ven-card">
             <div class="ven-img-pcontainer">
-                <img src="../img/imgIcon.png" class="ven-imgPuesto" />
+                <img id="img-ven" src="../img/imgIcon.png" class="ven-imgPuesto" />
             </div>
-            <div class="ven-nombrePuesto">Nombre del puesto</div>
+            <div id="nombre-puesto" class="ven-nombrePuesto">Nombre del puesto</div>
             <hr style="background-color: black; width: 90%; height: 1px; border-radius: 3px; border: none" />
             <div id="listaProductos" class="ven-productosContainer"></div>
             <hr style="background-color: black; width: 90%; height: 1px; border-radius: 3px; border: none" />
@@ -103,16 +103,9 @@
     </template>
 
     <template id="nuevoProducto">
-        <div class="ven-producto-precio">
-            <div class="producto">Producto</div>
-            <div class="precio">10.00$</div>
-        </div>
-    </template>
-
-    <template id="nuevoProducto"
-        ><div class="ven-producto-precio">
-            <div class="producto">Producto</div>
-            <div class="precio">Precio</div>
+        <div  class="ven-producto-precio">
+            <div id="producto" class="producto">Producto</div>
+            <div id="precio" class="precio">10.00$</div>
         </div>
     </template>
 

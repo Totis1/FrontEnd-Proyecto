@@ -37,7 +37,7 @@ const btnAceptar = (data, e) => {
     const val = '102'
     const id = e.target.getAttribute("id-eve")
     modificarEvento(data, val, id)
-    console.log('btnAceptar')
+    console.log('btnAcepta')
 
     document.querySelector('[id-reg-eve="' + id + '"]').remove()
     data.validacion = val
@@ -78,11 +78,12 @@ const btnEliminar = (e) => {
     document.querySelector('[id-reg-eve="' + id + '"]').remove()
 }
 
-const cargaDatos = (dato) => {
+const cargaDatos = (dato, ind) => {
     //console.log(dato)
     reg.getElementById('regtr').setAttribute("id-reg-eve", dato.id_evento)
     reg.getElementById('btn-aceptar').setAttribute("id-eve", dato.id_evento)
     reg.getElementById('btn-rechazar').setAttribute("id-eve", dato.id_evento)
+    reg.getElementById('btn-rechazar').setAttribute("id-info", ind)
 
     reg.getElementById('nombre').textContent = dato.Nombre_eve
     reg.getElementById('ponente').textContent = dato.Ponente
@@ -115,48 +116,58 @@ const cargaDatos = (dato) => {
 const controlAcceso = () => {
     const ruta = document.referrer.split('/')
     const rutaRef = ruta[ruta.length - 1]
-    if (rutaRef !== 'loginAdmin.html') {
+    if (rutaRef != 'loginAdmin.html' && rutaRef != 'headerAdmin.html') {
         window.location.href = './loginAdmin.html'
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    controlAcceso()
+    //controlAcceso()
 
     fetch("http://localhost:5000/traereventos", {
         method: "get",
     })
     .then((response) => response.json())
     .then((data) => {
-        //console.log("---->" + data.data)
+        
 
-
+        let ind = 0
         data.data.forEach((dato) => {
             //console.log("@@@ " + dato)
-            if ( dato.validacion !== "103" ) {
-                cargaDatos(dato)
+            if ( dato.validacion != "103" ) {
+                cargaDatos(dato, ind)
+                console.log(dato)
             }
+            ind++
             
         } )
-        //console.log(data)
         const btn_aceptar = document.querySelectorAll(".btn-aceptar")
         const btn_rechazar = document.querySelectorAll(".btn-rechazar")
         console.log(btn_aceptar)
         let contA = 0
         btn_rechazar.forEach((btn, i) => {
-           
-            if ( data.data[i].validacion === '101' ) {
-                console.log("---->" + data.data[i].id_evento)
-                btn.addEventListener('click', btnRechazar.bind(null,data.data[i]))
-                btn_aceptar[contA].addEventListener('click', btnAceptar.bind(null,data.data[i]))
+            const ii = btn.getAttribute('id-info')
+           console.log(ii)
+            if ( data.data[ii].validacion === '101' ) {
+                console.log("101")
+                btn.addEventListener('click', btnRechazar.bind(null,data.data[ii]))
+                btn_aceptar[contA].addEventListener('click', btnAceptar.bind(null,data.data[ii]))
                 contA += 1
-            }
-            if ( data.data[i].validacion === '102' ) {
-                console.log("@@@ " + data.data[i])
-               btn.addEventListener('click', btnEliminar)
+                
+            } else {
+                if ( data.data[ii].validacion === '102' ) {
+                    console.log("102")
+                   btn.addEventListener('click', btnEliminar)
+    
+                } else {
+                    console.log(data.data[ii].validacion)
+                    console.log(data.data[ii].Nombre_eve)
+                }
             }
             
-            console.log("------------------------------------------")
+
+             
+            
         })
         
     })
