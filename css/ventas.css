@@ -78,17 +78,21 @@
     box-shadow: 2px 2px 6px rgba(47, 114, 136, 0.444);
 }
 
-.ven-img-pcontainer{
-    height: 200px;
-    width: 220px;
-    background-color: white;
-    display: flex;
-    justify-content: center;
+
+.ven-img-pcontainer {
+    height: 180px;
+    width: 180px;
+    overflow: hidden;
+    background-color: rgb(237, 237, 237);
 }
 
-.ven-imgPuesto{
+.ven-imgPuesto {
     height: 100%;
     width: auto;
+    position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .ven-nombrePuesto{
