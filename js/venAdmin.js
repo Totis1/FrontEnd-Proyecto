@@ -3,6 +3,8 @@ const aprobados = document.getElementById("aprobados");
 const reg = document.getElementById("reg").content;
 const fragment = document.createDocumentFragment();
 
+let usua = []
+
 const modificarPuesto = (data, val, id) => {
     const datos = {
         id_puesto: id,
@@ -12,7 +14,7 @@ const modificarPuesto = (data, val, id) => {
         validacion: val,
     };
     const datosJSON = JSON.stringify(datos);
-    console.log(datosJSON);
+    //console.log(datosJSON);
     fetch("http://localhost:8080/actualizarpuesto", {
         method: "post",
         body: datosJSON,
@@ -22,7 +24,7 @@ const modificarPuesto = (data, val, id) => {
     })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
+            //console.log(data);
         });
 };
 
@@ -30,7 +32,7 @@ const btnAceptar = (data, e) => {
     const val = "102";
     const id = e.target.getAttribute("id-ven");
     modificarPuesto(data, val, id);
-    console.log("btnAceptar");
+     console.log("btnAceptar");
 
     document.querySelector('[id-reg-ven="' + id + '"]').remove();
     data.validacion = val;
@@ -41,7 +43,8 @@ const btnAceptar = (data, e) => {
 const btnRechazar = (data, e) => {
     const val = "103";
     const id = e.target.getAttribute("id-ven");
-    console.log("btnRechazar");
+    console.log('btnRechazar');
+    ("btnRechazar");
     modificarPuesto(data, val, id);
 
     document.querySelector('[id-reg-ven="' + id + '"]').remove();
@@ -49,7 +52,7 @@ const btnRechazar = (data, e) => {
 
 const btnEliminar = (e) => {
     const id = e.target.getAttribute("id-ven");
-    console.log("---s->" + id);
+     console.log("---s->" + id);
 
     const datos = {
         id_puesto: id,
@@ -66,28 +69,39 @@ const btnEliminar = (e) => {
     })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
+            // console.log(data);
         });
 
     document.querySelector('[id-reg-ven="' + id + '"]').remove();
 };
 
 const cargaDatos = (dato, ind) => {
-    console.log(dato);
+    let nombre;
+    var uf = usua.find(function(usuario) {
+        return usuario.id_usuario === dato.id_dueño;
+    });
+    
+    if ( uf ) {
+        nombre = uf.Nombre_usuario + " " + uf.Apellido_usuario;
+    } else {
+        nombre = 'usuario desconocido';
+    }
+
+    // console.log(dato);
     reg.getElementById("regtr").setAttribute("id-reg-ven", dato.id_puesto);
     reg.getElementById("btn-aceptar").setAttribute("id-ven", dato.id_puesto);
     reg.getElementById("btn-rechazar").setAttribute("id-ven", dato.id_puesto);
     reg.getElementById("btn-rechazar").setAttribute("id-info", ind);
 
     reg.getElementById("nombre").textContent = dato.Nombre_puesto;
-    reg.getElementById("alumno").textContent = dato.id_dueño;
+    reg.getElementById("alumno").textContent = nombre;
 
     let lis = "";
 
     const nProductos = Object.keys(dato.productos).length;
 
     for (let i = 1; i <= nProductos; i++) {
-        console.log(dato.productos[i].nombre);
+        // console.log(dato.productos[i].nombre);
         lis += "-" + dato.productos[i].nombre + "<br>";
     }
 
@@ -118,7 +132,9 @@ const controlAcceso = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    controlAcceso();
+    //controlAcceso();
+
+    traerUsuarios();
 
     fetch("http://localhost:8080/traerpuestos", {
         method: "get",
@@ -130,26 +146,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 //console.log("@@@ " + dato)
                 if (dato.validacion != "103") {
                     cargaDatos(dato, ind);
-                    console.log(dato);
+                    // console.log(dato);
                 }
                 ind++;
             });
 
             const btn_aceptar = document.querySelectorAll(".btn-aceptar");
             const btn_rechazar = document.querySelectorAll(".btn-rechazar");
-            console.log(btn_aceptar);
+            // console.log(btn_aceptar);
             let contA = 0;
             btn_rechazar.forEach((btn, i) => {
                 const ii = btn.getAttribute("id-info");
-                console.log(ii);
+                // console.log(ii);
                 if (data.data[ii].validacion === "101") {
-                    console.log("101");
+                    // console.log("101");
                     btn.addEventListener("click", btnRechazar.bind(null, data.data[ii]));
                     btn_aceptar[contA].addEventListener("click", btnAceptar.bind(null, data.data[ii]));
                     contA += 1;
                 }
                 if (data.data[ii].validacion === "102") {
-                    console.log("102");
+                    // console.log("102");
                     btn.addEventListener("click", btnEliminar);
                 }
             });
@@ -162,3 +178,18 @@ document.addEventListener("DOMContentLoaded", () => {
     //     btn.addEventListener("click", btnAceptar)
     // })
 });
+
+const traerUsuarios = () => {
+    fetch("http://localhost:8080/traerusuarios", {
+        method: "get",
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            let i = 0
+            data.data.forEach( (usu) =>{
+                usua[i] = usu;
+                i++;
+            })
+        })    
+}
