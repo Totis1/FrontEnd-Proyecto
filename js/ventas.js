@@ -6,12 +6,8 @@ const newProduct = document.getElementById("nuevoProducto").content;
 const slides = document.querySelectorAll(".ven-slide");
 let nSlides = 0;
 
-
-let idenLP = 0;
-let pr_res = []
-let pr_pre = []
-let vmAbi = -1;
-
+let productListId = 0;
+let openListId = -1;
 
 //change verMas to toggleProductList.
 const verMas = (e) => {
@@ -33,85 +29,47 @@ const verMas = (e) => {
     }
 
     //La lista desplegada es distinta o no había lista desplegada
-
-    if( vmAbi != id ){
-        const lp = document.querySelector('[idlp="' + id + '"]')
-        console.log(pr_res[id])
-        for( u=0; u<=pr_res[id].length; u+=1 ){
-            newProduct.getElementById('producto').textContent = pr_res[id][u]
-            newProduct.getElementById('precio').textContent = pr_pre[id][u]
-            const clone = newProduct.cloneNode(true)
-            fragment.appendChild(clone)
-            lp.appendChild(fragment)
+    if (openListId != id) {
+        const lp = document.querySelector('[idlp="' + id + '"]');
+        for (u = 0; u < 3; u += 1) {
+            const clone = newProduct.cloneNode(true);
+            fragment.appendChild(clone);
+            lp.appendChild(fragment);
         }
         openListId = id;
     } else {
         openListId = -1;
     }
+};
 
-}
+window.addEventListener("DOMContentLoaded", () => {
+    displaySlides();
 
-const desplegarPuestos = () => {
-    
-    
-    fetch('http://localhost:5000/traerpuestos', {
-        method: 'get'
-    }).then(response => response.json()).then(data => {
-    
-        data.data.forEach((pue)=> {
-            if (pue.valiacion != "102" ) {
-                return
-             }
+    const numEvents = 12;
+    let numProducts = 3;
+    containerEve.innerHTML = "";
+    for (let index = 0; index < numEvents; index++) {
+        const listProducts = card.getElementById("listaProductos");
 
+        card.getElementById("listaProductos").innerHTML = "";
 
-            const listProducts = card.getElementById('listaProductos')
-            const lpkey = Object.keys(pue.productos)
-            card.getElementById('img-ven').setAttribute("src", pue.url_imagen)
-            card.getElementById('nombre-puesto').textContent = pue.Nombre_puesto
-            
-            card.getElementById('listaProductos').innerHTML = ''
+        for (let u = 0; u < numProducts; u++) {
+            const cloneP = newProduct.cloneNode(true);
+            fragment.appendChild(cloneP);
+            listProducts.appendChild(fragment);
+        }
 
-            let pres = []
-            let ppre = []
-            for(let u = 1; u <= lpkey.length; u++){
-                if ( u<4 ) {
-                    newProduct.getElementById('producto').textContent = pue.productos[u].nombre
-                    newProduct.getElementById('precio').textContent = pue.productos[u].precio
-                    const cloneP = newProduct.cloneNode(true)
-                    fragment.appendChild(cloneP)
-                    listProducts.appendChild(fragment)
-                } else {
-                    pres[u-4] = pue.productos[u].nombre
-                    ppre[u-4] = pue.productos[u].precio
-                }
-            }
+        card.getElementById("listaProductos").setAttribute("idlp", productListId);
+        card.getElementById("btnVerMas").setAttribute("idbtn", productListId);
+        card.getElementById("ven-card").setAttribute("idlpc", productListId);
+        productListId += 1;
 
-            pr_res[idenLP] = pres
-            pr_pre[idenLP] = ppre
+        const clone = card.cloneNode(true);
+        fragment.appendChild(clone);
+        containerEve.appendChild(fragment);
+    }
 
-            card.getElementById('listaProductos').setAttribute("idlp", idenLP)
-            card.getElementById('btnVerMas').setAttribute("idbtn", idenLP)
-            card.getElementById('ven-card').setAttribute("idlpc", idenLP)
-            idenLP += 1;  
-
-             const clone = card.cloneNode(true)
-             fragment.appendChild(clone)
-             containerEve.appendChild(fragment)  
-        })
-
-        const btnVerMas = document.querySelectorAll('#btnVerMas')
-        
-        btnVerMas.forEach(btn => {
-            btn.addEventListener('click', verMas)
-        })
-    })
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-    showSlides()
-    containerEve.innerHTML = ''
-    desplegarPuestos()
-
+    const btnVerMas = document.querySelectorAll("#btnVerMas");
 
     btnVerMas.forEach((btn) => {
         btn.addEventListener("click", verMas);
