@@ -31,6 +31,43 @@
                     </svg>
                 </button>
             </div>
+
+            <div id="slider-container">
+                <div class="slider" id="eventSlider">
+                    <div class="slide" data-mes="0">
+                        <div class="slide-image">
+                            <img src="../img/img-even-01.jpg" alt="Evento 1" />
+                        </div>
+                        <div class="slide-info">
+                            <h3>Evento 1 Proximamente</h3>
+                            <!-- Información del evento 1 -->
+                        </div>
+                    </div>
+
+                    <div class="slide" data-mes="1">
+                        <div class="slide-image">
+                            <img src="../img/img-even-02.png" alt="Evento 2" />
+                        </div>
+                        <div class="slide-info">
+                            <h3>Evento 2 Proximamente</h3>
+                            <!-- Información del evento 2 -->
+                        </div>
+                    </div>
+
+                    <!-- Más slides para otros eventos -->
+                </div>
+                <button class="slider-btn prev" onclick="changeSlide(-1)">❮</button>
+                <button class="slider-btn next" onclick="changeSlide(1)">❯</button>
+            </div>
+
+            <span style="height: 30px"></span>
+
+            <!-- <div id="Navegacion">
+                <button id="btnRetroceder">❮</button>
+                <span id="mesTitulo"></span>
+                <button id="btnAvanzar">❯</button>
+            </div> -->
+
             <div id="eContainer" class="containerEventos"></div>
         </div>
 

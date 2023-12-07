@@ -83,3 +83,145 @@
     color: rgb(92, 92, 92);
     text-align: end;
 }
+
+#slider-container {
+    width: 100%;
+    height: 330px;
+    overflow: hidden;
+    position: relative;
+    background-color: #09004e;
+
+    border-radius: 8px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid black;
+}
+
+.slider {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+}
+
+.slide-image,
+.slide-info {
+    width: 50%;
+    transition: all 0.5s ease;
+}
+
+.slide-image {
+    flex-grow: 1;
+}
+
+/* .slide-image img {
+    position: absolute;
+    width: 100%;
+    height: 400%;
+    object-fit: cover;
+} */
+
+.slide:hover .slide-image,
+.slide-btn:hover ~ .slide-image {
+    width: 70%;
+}
+
+.slide-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #09004e;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    flex-grow: 0;
+}
+
+.slide:hover .slide-info,
+.slider-btn:hover ~ .slide .slide-info {
+    width: 65%;
+    opacity: 1;
+}
+
+.slide-info h3 {
+    color: white;
+    font-size: 20px;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 2;
+    color: whitesmoke;
+    font-size: x-large;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+    color: #ffd700;
+}
+
+#btnRetroceder,
+#btnAvanzar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: #09004e;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    margin-top: 40px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#btnRetroceder:hover,
+#btnAvanzar:hover {
+    background-color: #ffd700;
+    color: #09004e;
+}
+
+#mesTitulo {
+    font-family: "Arial", sans-serif;
+    font-size: 35px;
+    color: black;
+}

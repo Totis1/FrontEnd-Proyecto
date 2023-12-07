@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/eventos.css" />
+        <link rel="stylesheet" href="../css/general.css" />
+        <link rel="stylesheet" href="../css/MisEventos.css" />
+    </head>
+    <body>
+        <div class="headerContainer">
+            <iframe src="../components/header.html" frameborder="0" style="width: 100%; height: 110px"></iframe>
+        </div>
+        <div class="container">
+            <div class="top">
+                <h1>Calendario de Eventos</h1>
+            </div>
+            <span style="height: 50px"></span>
+
+            <div id="calendario">
+                <div id="navegacionMes">
+                    <button id="mesAnterior">❮</button>
+                    <span id="tituloMes"></span>
+                    <button id="mesSiguiente">❯</button>
+                </div>
+                <div id="diasSemana">
+                    <div>Domingo</div>
+                    <div>Lunes</div>
+                    <div>Martes</div>
+                    <div>Miércoles</div>
+                    <div>Jueves</div>
+                    <div>Viernes</div>
+                    <div>Sábado</div>
+                </div>
+                <div id="dias">
+                    <!-- Aquí se generarán los días del mes -->
+                </div>
+            </div>
+
+            <!--Botones para eventos -->
+            <div id="botonesEvento">
+                <button id="btnEliminarEvento">Eliminar Evento</button>
+                <button id="btnModificarEvento">Modificar Evento</button>
+                <button id="btnAgregarEvento">Agregar Evento</button>
+            </div>
+
+            <!--Ventanas para formularios-->
+            <dialog id="formularioAgregarEvento">
+                <form method="dialog">
+                    <h2>Agregar Evento</h2>
+                    <input type="text" id="nombreEvento" placeholder="Nombre del Evento" />
+                    <input type="date" id="fechaEventoAgregar" min="2023-01-01" max="2023-12-31" />
+                    <input type="text" id="ponenteEvento" placeholder="Ponente" />
+                    <textarea id="descripcionEvento" placeholder="Descripción"></textarea>
+                    <button id="guardarEvento">Agregar Evento</button>
+                </form>
+            </dialog>
+
+            <dialog id="formularioModificarEvento">
+                <form method="dialog">
+                    <h2>Modificar Evento</h2>
+                    <input type="text" id="nombreEvento" placeholder="Nombre del Evento" />
+                    <input type="date" id="fechaEventoAgregar" min="2023-01-01" max="2023-12-31" />
+                    <input type="text" id="ponenteEvento" placeholder="Ponente" />
+                    <textarea id="descripcionEvento" placeholder="Descripción"></textarea>
+                    <button id="guardarEvento">Guardar Evento</button>
+                </form>
+            </dialog>
+
+            <dialog id="formularioEliminarEvento">
+                <form method="dialog">
+                    <h2>Eliminar Evento</h2>
+                    <input type="text" id="nombreEventoEliminar" placeholder="Nombre del Evento" />
+                    <input type="date" id="fechaEventoEliminar" min="2023-01-01" max="2023-12-31" />
+                    <button id="confirmarEliminarEvento">Eliminar Evento</button>
+                </form>
+            </dialog>
+        </div>
+    </body>
+    <script src="../js/MisEventos.js"></script>
+</html>
